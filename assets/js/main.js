@@ -15,6 +15,19 @@
   window.addEventListener('load', toggleScrolled);
 
   /**
+   * Placeholder links (href="#" or empty) do nothing instead of jumping to the top
+   */
+  function isPlaceholderLink(link) {
+    const href = link.getAttribute('href');
+    return href === null || href.trim() === '' || href.trim() === '#';
+  }
+
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (link && isPlaceholderLink(link)) e.preventDefault();
+  });
+
+  /**
    * Mobile nav toggle
    */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
@@ -33,7 +46,7 @@
    */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active') && !navmenu.classList.contains('toggle-dropdown')) {
+      if (document.querySelector('.mobile-nav-active') && !navmenu.classList.contains('toggle-dropdown') && !isPlaceholderLink(navmenu)) {
         mobileNavToogle();
       }
     });
