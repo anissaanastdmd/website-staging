@@ -8,7 +8,7 @@
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
     if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+    window.scrollY > 0 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
 
   document.addEventListener('scroll', toggleScrolled);
@@ -139,9 +139,13 @@
   /**
    * Frequently Asked Questions Toggle
    */
-  document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle, .faq-item .faq-header').forEach((faqItem) => {
-    faqItem.addEventListener('click', () => {
-      faqItem.parentNode.classList.toggle('faq-active');
+  // The whole panel (including its padding) toggles it, except clicks on links
+  // inside an answer and clicks that finish selecting text.
+  document.querySelectorAll('.faq-item').forEach((faqItem) => {
+    faqItem.addEventListener('click', (event) => {
+      if (event.target.closest('a')) return;
+      if (window.getSelection().toString()) return;
+      faqItem.classList.toggle('faq-active');
     });
   });
 

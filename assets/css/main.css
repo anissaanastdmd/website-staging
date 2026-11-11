@@ -2,11 +2,43 @@
 /*--------------------------------------------------------------
 # Font & Color Variables
 --------------------------------------------------------------*/
-/* Fonts */
+/* Typography
+ *
+ * Two fonts, one rule each:
+ *   --heading-font (Ubuntu)  headings h1-h6 and large display numbers (stats, abbreviations). Nothing else.
+ *   --default-font (Roboto)  everything else: body copy, nav, buttons, labels, footer, forms.
+ *
+ * Weights (only these are loaded in _includes/head.html):
+ *   Ubuntu 700  display, section and subsection headings (h1-h3 roles)
+ *   Ubuntu 500  card titles and small headings (h4-h6 roles)
+ *   Roboto 400  body copy, lead paragraphs, secondary text
+ *   Roboto 500  nav links, form labels, small tags/badges
+ *   Roboto 700  buttons, eyebrow labels, <strong>, emphasized phone numbers/links
+ *
+ * Sizes: always use a token below. Headings get their size from the role they play,
+ * not their tag; e.g. a card title marked up as <h3> uses --fs-h4.
+ */
 :root {
   --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Ubuntu", sans-serif;
-  --nav-font: "Poppins", sans-serif;
+  --nav-font: var(--default-font);
+  --fw-heading: 700; /* Ubuntu: display, section, subsection headings */
+  --fw-subheading: 500; /* Ubuntu: card titles, small headings */
+  --fw-regular: 400; /* Roboto: body copy */
+  --fw-medium: 500; /* Roboto: nav, labels, tags */
+  --fw-bold: 700; /* Roboto: buttons, eyebrows, emphasis */
+  --fs-display: clamp(2.1rem, 1.4rem + 2.6vw, 3.5rem); /* hero title only (h1) */
+  --fs-h2: clamp(1.9rem, 1.4rem + 1.6vw, 2.6rem); /* section / page titles */
+  --fs-h3: clamp(1.4rem, 1.2rem + 0.8vw, 1.75rem); /* subsection titles */
+  --fs-h4: 1.25rem; /* card titles */
+  --fs-h5: 1.0625rem; /* small headings: list items, callouts, footer columns, FAQ questions */
+  --fs-stat: 2rem; /* display numbers (Ubuntu 700) */
+  --fs-lead: 1.125rem; /* intro paragraph under a section title */
+  --fs-body: 1rem; /* default copy */
+  --fs-sm: 0.9375rem; /* secondary copy: card text, captions, footer */
+  --fs-xs: 0.8125rem; /* eyebrows, tags, badges, fine print */
+  --lh-heading: 1.2;
+  --ls-eyebrow: 0.12em; /* uppercase eyebrow/tag letter-spacing */
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -82,6 +114,64 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
+  line-height: var(--lh-heading);
+}
+
+h1 {
+  font-size: var(--fs-display);
+  font-weight: var(--fw-heading);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-heading);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-heading);
+}
+
+h4 {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-subheading);
+}
+
+h5,
+h6 {
+  font-size: var(--fs-h5);
+  font-weight: var(--fw-subheading);
+}
+
+.h2 {
+  font-size: var(--fs-h2) !important;
+  font-weight: var(--fw-heading);
+}
+
+.h3 {
+  font-size: var(--fs-h3) !important;
+  font-weight: var(--fw-heading);
+}
+
+.h4 {
+  font-size: var(--fs-h4) !important;
+  font-weight: var(--fw-subheading) !important;
+}
+
+.h5,
+.h6 {
+  font-size: var(--fs-h5) !important;
+  font-weight: var(--fw-subheading) !important;
+}
+
+strong,
+b {
+  font-weight: var(--fw-bold);
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  font-weight: var(--fw-regular);
 }
 
 /*--------------------------------------------------------------
@@ -132,7 +222,7 @@ h6 {
   padding: 0 1.75rem;
   border-radius: 999px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: var(--fw-bold);
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
@@ -166,7 +256,7 @@ h6 {
 .header .btn-getstarted {
   min-height: 44px;
   padding: 0 1.625rem;
-  font-size: 15px;
+  font-size: var(--fs-sm);
   margin: 0;
   box-shadow: 0 8px 18px color-mix(in srgb, var(--accent-color), transparent 70%);
 }
@@ -182,7 +272,6 @@ h6 {
     margin: 0 15px 0 0;
     min-height: 40px;
     padding: 0 1.25rem;
-    font-size: 14px;
   }
   .header .navmenu {
     order: 3;
@@ -230,7 +319,7 @@ h6 {
     padding: 18px 15px;
     font-size: 16px;
     font-family: var(--nav-font);
-    font-weight: 400;
+    font-weight: var(--fw-medium);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -281,7 +370,7 @@ h6 {
   }
   .navmenu .dropdown ul a {
     padding: 10px 20px;
-    font-size: 15px;
+    font-size: var(--fs-sm);
     text-transform: none;
     color: var(--nav-dropdown-color);
   }
@@ -344,7 +433,7 @@ h6 {
     padding: 10px 20px;
     font-family: var(--nav-font);
     font-size: 17px;
-    font-weight: 500;
+    font-weight: var(--fw-medium);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -428,7 +517,7 @@ h6 {
 .footer {
   color: var(--default-color);
   background-color: var(--background-color);
-  font-size: 14px;
+  font-size: var(--fs-sm);
   position: relative;
 }
 .footer .footer-top {
@@ -450,10 +539,6 @@ h6 {
   font-weight: 700;
   letter-spacing: 1px;
 }
-.footer .footer-about p {
-  font-size: 14px;
-  font-family: var(--heading-font);
-}
 .footer .social-links a {
   display: flex;
   align-items: center;
@@ -472,8 +557,8 @@ h6 {
   border-color: var(--accent-color);
 }
 .footer h4 {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: var(--fs-h5);
+  font-weight: var(--fw-subheading);
   position: relative;
   padding-bottom: 12px;
 }
@@ -547,7 +632,7 @@ h6 {
 }
 .footer .credits {
   margin-top: 8px;
-  font-size: 13px;
+  font-size: var(--fs-xs);
 }
 @media (max-width: 991.98px) {
   .footer .footer-about {
@@ -593,7 +678,6 @@ h6 {
     --bs-gutter-y: 0;
   }
   .footer h4 {
-    font-size: 15px;
     padding-bottom: 6px;
     margin-bottom: 6px;
   }
@@ -606,7 +690,7 @@ h6 {
   .footer .copyright {
     margin-top: 0.5rem !important;
     padding: 18px 0;
-    font-size: 13px;
+    font-size: var(--fs-xs);
   }
 }
 
@@ -681,7 +765,7 @@ h6 {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 16px;
+  font-size: var(--fs-sm);
   font-weight: 400;
 }
 .page-title nav ol li + li {
@@ -720,13 +804,13 @@ section,
   padding-bottom: 60px;
   position: relative;
 }
+.section-title h1,
 .section-title h2 {
-  font-size: 32px;
-  font-weight: 500;
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
 }
+.section-title h1:before,
 .section-title h2:before {
   content: "";
   position: absolute;
@@ -739,6 +823,7 @@ section,
   bottom: 1px;
   margin: auto;
 }
+.section-title h1::after,
 .section-title h2::after {
   content: "";
   position: absolute;
@@ -753,6 +838,7 @@ section,
 }
 .section-title p {
   margin-bottom: 0;
+  font-size: var(--fs-lead);
 }
 
 /*--------------------------------------------------------------
@@ -768,28 +854,28 @@ section,
   max-width: 560px;
 }
 .hero .hero-eyebrow {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  display: block;
+  font-family: var(--default-font);
+  line-height: 1.5;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
   color: var(--accent-color);
   margin-bottom: 1rem;
 }
 .hero .hero-title {
-  font-size: clamp(2.1rem, 1.4rem + 2.6vw, 3.5rem);
-  font-weight: 700;
+  font-size: var(--fs-display);
   line-height: 1.12;
-  letter-spacing: -0.01em;
   color: var(--heading-color);
   margin-bottom: 1.25rem;
 }
-.hero .hero-title span {
+.hero .hero-title .hero-title-accent {
   color: var(--accent-color);
   white-space: nowrap;
 }
 .hero .hero-description {
-  font-size: 1.125rem;
+  font-size: var(--fs-lead);
   line-height: 1.65;
   color: color-mix(in srgb, var(--default-color), transparent 10%);
   margin-bottom: 2rem;
@@ -809,7 +895,7 @@ section,
   padding: 0 1.75rem;
   border-radius: 999px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: var(--fw-bold);
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
@@ -859,7 +945,7 @@ section,
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
   color: color-mix(in srgb, var(--default-color), transparent 15%);
 }
 .hero .hero-highlights li {
@@ -918,13 +1004,12 @@ section,
 }
 .hero .hero-badge-card strong {
   display: block;
-  font-family: var(--heading-font);
-  font-size: 1.05rem;
+  font-size: var(--fs-body);
   color: var(--heading-color);
   line-height: 1.2;
 }
 .hero .hero-badge-card span {
-  font-size: 0.85rem;
+  font-size: var(--fs-xs);
   color: color-mix(in srgb, var(--default-color), transparent 25%);
 }
 @media (max-width: 991.98px) {
@@ -955,10 +1040,10 @@ section,
     font-size: 1.1rem;
   }
   .hero .hero-badge-card strong {
-    font-size: 0.95rem;
+    font-size: var(--fs-sm);
   }
   .hero .hero-badge-card span {
-    font-size: 0.78rem;
+    font-size: var(--fs-xs);
   }
 }
 @media (max-width: 575.98px) {
@@ -966,14 +1051,13 @@ section,
     padding: 124px 0 48px;
   }
   .hero .hero-eyebrow {
-    font-size: 0.72rem;
     margin-bottom: 0.625rem;
   }
   .hero .hero-title {
     margin-bottom: 0.875rem;
   }
   .hero .hero-description {
-    font-size: 1rem;
+    font-size: var(--fs-body);
     margin-bottom: 1.25rem;
   }
   .hero .hero-ctas {
@@ -986,7 +1070,6 @@ section,
     min-height: 52px;
   }
   .hero .hero-highlights {
-    font-size: 0.875rem;
     gap: 0.375rem 1rem;
   }
 }
@@ -1003,23 +1086,21 @@ section,
   text-align: center;
 }
 .services-overview .services-intro h2 {
-  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.6rem);
-  font-weight: 700;
   line-height: 1.2;
   color: var(--heading-color);
   margin-bottom: 1rem;
 }
 .services-overview .services-intro p {
-  font-size: 1.125rem;
+  font-size: var(--fs-lead);
   line-height: 1.7;
   color: color-mix(in srgb, var(--default-color), transparent 15%);
   margin: 0;
 }
 .services-overview .services-eyebrow {
   display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
   color: var(--accent-color);
   margin-bottom: 0.75rem;
@@ -1047,8 +1128,8 @@ section,
   margin-bottom: 1.25rem;
 }
 .services-overview .service-group-header h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-subheading);
   color: var(--heading-color);
   margin: 0 0 0.2rem;
 }
@@ -1065,7 +1146,7 @@ section,
   background: color-mix(in srgb, var(--accent-light-color), transparent 70%);
 }
 .services-overview .service-group-tagline {
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
   font-weight: 500;
   color: var(--accent-color);
   margin: 0;
@@ -1087,7 +1168,7 @@ section,
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
-  font-size: 0.975rem;
+  font-size: var(--fs-sm);
   color: var(--heading-color);
 }
 .services-overview .service-group-list i {
@@ -1099,7 +1180,7 @@ section,
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
-  font-size: 0.9rem;
+  font-size: var(--fs-sm);
   line-height: 1.55;
   color: color-mix(in srgb, var(--default-color), transparent 10%);
   background: color-mix(in srgb, var(--accent-light-color), transparent 82%);
@@ -1116,7 +1197,7 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-weight: 600;
+  font-weight: var(--fw-bold);
   color: var(--accent-color);
   text-decoration: none;
 }
@@ -1140,8 +1221,8 @@ section,
   background: color-mix(in srgb, var(--accent-light-color), transparent 80%);
 }
 .services-overview .services-cta h3 {
-  font-size: 1.35rem;
-  font-weight: 700;
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-subheading);
   color: var(--heading-color);
   margin-bottom: 0.4rem;
 }
@@ -1165,7 +1246,7 @@ section,
   padding: 0 1.75rem;
   border-radius: 999px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: var(--fw-bold);
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
@@ -1225,7 +1306,7 @@ section,
     margin-bottom: 2.5rem;
   }
   .services-overview .services-intro p {
-    font-size: 1rem;
+    font-size: var(--fs-body);
   }
   .services-overview .service-group {
     padding: 1.5rem;
@@ -1235,9 +1316,6 @@ section,
     width: 52px;
     height: 52px;
     font-size: 1.3rem;
-  }
-  .services-overview .service-group-header h3 {
-    font-size: 1.25rem;
   }
   .services-overview .services-cta {
     padding: 1.5rem;
@@ -1266,23 +1344,21 @@ section,
   text-align: center;
 }
 .patient-reviews .reviews-intro h2 {
-  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.6rem);
-  font-weight: 700;
   line-height: 1.2;
   color: var(--heading-color);
   margin-bottom: 1rem;
 }
 .patient-reviews .reviews-intro p {
-  font-size: 1.125rem;
+  font-size: var(--fs-lead);
   line-height: 1.7;
   color: color-mix(in srgb, var(--default-color), transparent 15%);
   margin: 0;
 }
 .patient-reviews .reviews-eyebrow {
   display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
   color: var(--accent-color);
   margin-bottom: 0.75rem;
@@ -1348,13 +1424,12 @@ section,
 }
 .patient-reviews .reviewer strong {
   display: block;
-  font-family: var(--heading-font);
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   color: var(--heading-color);
 }
 .patient-reviews .reviewer span span {
-  font-size: 0.875rem;
+  font-size: var(--fs-sm);
   color: var(--accent-color);
 }
 .patient-reviews .reviewer-avatar {
@@ -1365,8 +1440,7 @@ section,
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  font-family: var(--heading-font);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   font-size: 1rem;
   color: var(--accent-color);
   background: color-mix(in srgb, var(--accent-light-color), transparent 65%);
@@ -1400,7 +1474,7 @@ section,
     margin-bottom: 2rem;
   }
   .patient-reviews .reviews-intro p {
-    font-size: 1rem;
+    font-size: var(--fs-body);
   }
   .patient-reviews .review-card {
     padding: 1.5rem;
@@ -1423,23 +1497,21 @@ section,
   }
 }
 .call-to-action .content-wrapper h2 {
-  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.6rem);
-  font-weight: 700;
   line-height: 1.2;
   color: var(--heading-color);
   margin-bottom: 1.25rem;
 }
 .call-to-action .content-wrapper p {
-  font-size: 1.075rem;
+  font-size: var(--fs-lead);
   line-height: 1.75;
   color: color-mix(in srgb, var(--default-color), transparent 10%);
   margin-bottom: 1rem;
 }
 .call-to-action .story-eyebrow {
   display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
   color: var(--accent-color);
   margin-bottom: 0.75rem;
@@ -1467,7 +1539,7 @@ section,
   padding: 0 1.75rem;
   border-radius: 999px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: var(--fw-bold);
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
@@ -1507,7 +1579,7 @@ section,
   padding: 0 1.75rem;
   border-radius: 999px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: var(--fw-bold);
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
@@ -1594,24 +1666,23 @@ section,
   margin: 0 auto 3rem;
   text-align: center;
 }
+.resources-preview .resources-intro h1,
 .resources-preview .resources-intro h2 {
-  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.6rem);
-  font-weight: 700;
   line-height: 1.2;
   color: var(--heading-color);
   margin-bottom: 1rem;
 }
 .resources-preview .resources-intro p {
-  font-size: 1.125rem;
+  font-size: var(--fs-lead);
   line-height: 1.7;
   color: color-mix(in srgb, var(--default-color), transparent 15%);
   margin: 0;
 }
 .resources-preview .resources-eyebrow {
   display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
   color: var(--accent-color);
   margin-bottom: 0.75rem;
@@ -1677,8 +1748,8 @@ section,
   padding: 2.5rem 1.75rem 1.75rem;
 }
 .resources-preview .resource-body h3 {
-  font-size: 1.35rem;
-  font-weight: 700;
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-subheading);
   color: var(--heading-color);
   margin-bottom: 0.6rem;
 }
@@ -1693,7 +1764,7 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-weight: 600;
+  font-weight: var(--fw-bold);
   color: var(--accent-color);
 }
 .resources-preview .resource-link i {
@@ -1712,7 +1783,7 @@ section,
     margin-bottom: 2rem;
   }
   .resources-preview .resources-intro p {
-    font-size: 1rem;
+    font-size: var(--fs-body);
   }
   .resources-preview .resource-card {
     border-radius: 20px;
@@ -1735,23 +1806,21 @@ section,
   text-align: center;
 }
 .home-contact .contact-intro h2 {
-  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.6rem);
-  font-weight: 700;
   line-height: 1.2;
   color: var(--heading-color);
   margin-bottom: 1rem;
 }
 .home-contact .contact-intro p {
-  font-size: 1.125rem;
+  font-size: var(--fs-lead);
   line-height: 1.7;
   color: color-mix(in srgb, var(--default-color), transparent 15%);
   margin: 0;
 }
 .home-contact .contact-eyebrow {
   display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
   color: var(--accent-color);
   margin-bottom: 0.75rem;
@@ -1767,8 +1836,8 @@ section,
   padding: 2.25rem;
 }
 .home-contact .contact-form-panel .form-label {
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-sm);
   color: var(--heading-color);
   margin-bottom: 0.4rem;
 }
@@ -1803,7 +1872,7 @@ section,
   padding: 0 1.75rem;
   border-radius: 999px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: var(--fw-bold);
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
@@ -1872,7 +1941,7 @@ section,
     margin-bottom: 2rem;
   }
   .home-contact .contact-intro p {
-    font-size: 1rem;
+    font-size: var(--fs-body);
   }
   .home-contact .contact-panel {
     border-radius: 20px;
@@ -1892,18 +1961,21 @@ section,
 # Schedule CTA Section (final call to action on the home page)
 --------------------------------------------------------------*/
 .schedule-cta {
-  padding: 0 0 100px;
+  padding: 100px 0;
   background: color-mix(in srgb, var(--accent-light-color), transparent 80%);
 }
 @media (max-width: 991.98px) {
   .schedule-cta {
-    padding-bottom: 80px;
+    padding: 80px 0;
   }
 }
 @media (max-width: 575.98px) {
   .schedule-cta {
-    padding-bottom: 64px;
+    padding: 64px 0;
   }
+}
+.home-contact + .schedule-cta {
+  padding-top: 0;
 }
 .schedule-cta .contact-banner {
   background: linear-gradient(135deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), black 15%) 100%);
@@ -1960,8 +2032,7 @@ section,
 }
 .schedule-cta .contact-banner .contact-text h5 {
   color: var(--contrast-color);
-  font-size: 1.3rem;
-  font-weight: 400;
+  font-size: var(--fs-h4);
   margin-bottom: 0.5rem;
 }
 .schedule-cta .contact-banner .contact-text p {
@@ -1989,7 +2060,7 @@ section,
   padding: 0 1.75rem;
   border-radius: 999px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: var(--fw-bold);
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
@@ -2035,7 +2106,7 @@ section,
   padding: 0 1.75rem;
   border-radius: 999px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: var(--fw-bold);
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
@@ -2078,23 +2149,20 @@ section,
 .about .intro-section {
   margin-bottom: 100px;
 }
+.about .intro-section h1,
 .about .intro-section h2 {
-  font-size: 3.2rem;
-  font-weight: 300;
   line-height: 1.2;
   margin-bottom: 2rem;
-  letter-spacing: -0.02em;
 }
 .about .intro-section p.lead {
-  font-size: 1.3rem;
-  font-weight: 300;
+  font-size: var(--fs-lead);
   line-height: 1.8;
   color: color-mix(in srgb, var(--default-color), transparent 25%);
   max-width: 700px;
   margin: 0 auto;
 }
 .about .image-stats-section {
-  margin-bottom: 120px;
+  margin-bottom: 72px;
 }
 .about .image-gallery {
   position: relative;
@@ -2105,7 +2173,8 @@ section,
 .about .image-gallery .main-image-container .main-image {
   border-radius: 8px;
   width: 100%;
-  height: 500px;
+  height: auto;
+  aspect-ratio: 3/2;
   object-fit: cover;
 }
 .about .image-gallery .secondary-images {
@@ -2115,7 +2184,8 @@ section,
 }
 .about .image-gallery .secondary-images .secondary-image {
   width: calc(50% - 10px);
-  height: 200px;
+  height: auto;
+  aspect-ratio: 4/3;
   object-fit: cover;
   border-radius: 8px;
   transition: transform 0.3s ease;
@@ -2133,13 +2203,10 @@ section,
   }
 }
 .about .stats-content h3 {
-  font-size: 2.4rem;
-  font-weight: 300;
   margin-bottom: 1.5rem;
   line-height: 1.3;
 }
 .about .stats-content > p {
-  font-size: 1.1rem;
   line-height: 1.8;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin-bottom: 3rem;
@@ -2157,32 +2224,24 @@ section,
   margin-right: 2rem;
 }
 .about .stats-list .stat-row .stat-number span {
-  font-size: 3rem;
-  font-weight: 200;
+  font-size: var(--fs-stat);
+  font-family: var(--heading-font);
+  font-weight: var(--fw-heading);
   color: var(--accent-color);
   line-height: 1;
-}
-.about .stats-list .stat-row .stat-number span:not(.purecounter) {
-  font-size: 1.8rem;
 }
 .about .stats-list .stat-row .stat-info {
   flex: 1;
 }
 .about .stats-list .stat-row .stat-info h5 {
-  font-size: 1.2rem;
-  font-weight: 400;
   margin-bottom: 0.5rem;
   color: var(--heading-color);
 }
 .about .stats-list .stat-row .stat-info p {
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   margin: 0;
   line-height: 1.6;
-}
-.about .mission-section {
-  margin-bottom: 100px;
-  padding: 80px 0;
 }
 .about .mission-section .mission-item {
   text-align: center;
@@ -2205,8 +2264,6 @@ section,
   color: var(--contrast-color);
 }
 .about .mission-section .mission-item h4 {
-  font-size: 1.4rem;
-  font-weight: 400;
   margin-bottom: 1.5rem;
   color: var(--heading-color);
 }
@@ -2223,12 +2280,10 @@ section,
   margin-bottom: 100px;
 }
 .about .specialties-section h3 {
-  font-size: 2.4rem;
-  font-weight: 300;
   margin-bottom: 1rem;
 }
 .about .specialties-section .section-description {
-  font-size: 1.1rem;
+  font-size: var(--fs-lead);
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   margin-bottom: 4rem;
   max-width: 600px;
@@ -2274,12 +2329,10 @@ section,
   color: var(--accent-color);
 }
 .about .accreditation-section h3 {
-  font-size: 2.2rem;
-  font-weight: 300;
   margin-bottom: 1rem;
 }
 .about .accreditation-section .section-description {
-  font-size: 1.1rem;
+  font-size: var(--fs-lead);
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   margin-bottom: 3rem;
   line-height: 1.7;
@@ -2331,45 +2384,94 @@ section,
   .about .intro-section {
     margin-bottom: 60px;
   }
-  .about .intro-section h2 {
-    font-size: 2.6rem;
-  }
   .about .image-stats-section {
-    margin-bottom: 80px;
+    margin-bottom: 56px;
   }
-  .about .mission-section {
-    margin-bottom: 60px;
-    padding: 60px 0;
+  .about .mission-section .row > div:not(:last-child) .mission-item {
+    margin-bottom: 2.5rem;
   }
   .about .specialties-section {
     margin-bottom: 60px;
   }
 }
 @media (max-width: 768px) {
-  .about .intro-section h2 {
-    font-size: 2.2rem;
-  }
-  .about .stats-content h3 {
-    font-size: 2rem;
-  }
   .about .stats-list .stat-row .stat-number {
     min-width: 100px;
     margin-right: 1.5rem;
   }
-  .about .stats-list .stat-row .stat-number span {
-    font-size: 2.4rem;
-  }
   .about .image-gallery .secondary-images {
-    flex-direction: column;
-    gap: 15px;
+    gap: 12px;
+    margin-top: 12px;
   }
   .about .image-gallery .secondary-images .secondary-image {
-    width: 100%;
-    height: 180px;
+    width: calc(50% - 6px);
   }
-  .about .mission-section .mission-item {
-    margin-bottom: 3rem;
+}
+
+/*--------------------------------------------------------------
+# Affiliations Section (professional memberships)
+--------------------------------------------------------------*/
+.affiliations .affiliations-grid {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 991.98px) {
+  .affiliations .affiliations-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+@media (max-width: 420px) {
+  .affiliations .affiliations-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.affiliations .affiliation-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+  padding: 1.75rem 1.25rem;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-radius: 12px;
+  text-align: center;
+  color: var(--default-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.affiliations .affiliation-item a:hover, .affiliations .affiliation-item a:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--accent-light-color);
+  box-shadow: 0 8px 25px color-mix(in srgb, var(--default-color), transparent 88%);
+}
+.affiliations .affiliation-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  width: 100%;
+}
+.affiliations .affiliation-logo img {
+  max-height: 56px;
+  max-width: 100%;
+  object-fit: contain;
+}
+.affiliations .affiliation-abbr {
+  font-family: var(--heading-font);
+  font-size: var(--fs-stat);
+  font-weight: var(--fw-heading);
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+}
+.affiliations .affiliation-name {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  line-height: 1.4;
 }
 
 /*--------------------------------------------------------------
@@ -2599,15 +2701,12 @@ section,
   font-size: 1.1rem;
 }
 .department-details .department-content .department-header .department-name {
-  font-size: 3.2rem;
-  font-weight: 700;
   line-height: 1.2;
   color: var(--heading-color);
   margin-bottom: 1.5rem;
-  letter-spacing: -0.02em;
 }
 .department-details .department-content .department-header .department-description {
-  font-size: 1.2rem;
+  font-size: var(--fs-lead);
   line-height: 1.8;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   max-width: 85%;
@@ -2616,8 +2715,6 @@ section,
   margin-bottom: 3rem;
 }
 .department-details .department-content .service-highlights h3 {
-  font-size: 1.8rem;
-  font-weight: 600;
   color: var(--heading-color);
   margin-bottom: 2rem;
 }
@@ -2655,13 +2752,11 @@ section,
   color: var(--contrast-color);
 }
 .department-details .department-content .service-highlights .highlights-grid .highlight-card h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
   color: var(--heading-color);
   margin-bottom: 0.5rem;
 }
 .department-details .department-content .service-highlights .highlights-grid .highlight-card p {
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   margin-bottom: 0;
   line-height: 1.6;
@@ -2681,7 +2776,7 @@ section,
   padding: 1.2rem 2.5rem;
   border-radius: 8px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: var(--fw-bold);
   font-size: 1rem;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color), transparent 70%);
@@ -2699,21 +2794,18 @@ section,
   flex-direction: column;
 }
 .department-details .department-content .cta-section .contact-quick .contact-label {
-  font-size: 0.85rem;
+  font-size: var(--fs-xs);
   color: color-mix(in srgb, var(--default-color), transparent 40%);
   margin-bottom: 0.25rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: var(--ls-eyebrow);
 }
 .department-details .department-content .cta-section .contact-quick .contact-number {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: var(--fs-lead);
+  font-weight: var(--fw-bold);
   color: var(--accent-color);
 }
 @media (max-width: 768px) {
-  .department-details .department-content .department-header .department-name {
-    font-size: 2.2rem;
-  }
   .department-details .department-content .department-header .department-description {
     max-width: 100%;
   }
@@ -2756,17 +2848,18 @@ section,
   border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 .department-details .visual-section .main-visual .stats-overlay .stat-item .stat-number {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: var(--fs-stat);
+  font-family: var(--heading-font);
+  font-weight: var(--fw-heading);
   color: var(--accent-color);
   line-height: 1;
   margin-bottom: 0.25rem;
 }
 .department-details .visual-section .main-visual .stats-overlay .stat-item .stat-label {
-  font-size: 0.8rem;
+  font-size: var(--fs-xs);
   color: color-mix(in srgb, var(--default-color), transparent 40%);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: var(--ls-eyebrow);
 }
 @media (max-width: 991px) {
   .department-details .visual-section {
@@ -2787,14 +2880,10 @@ section,
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 .department-details .department-details .details-content h3 {
-  font-size: 2.2rem;
-  font-weight: 600;
   color: var(--heading-color);
   margin-bottom: 1.5rem;
-  letter-spacing: -0.01em;
 }
 .department-details .department-details .details-content p {
-  font-size: 1.1rem;
   line-height: 1.8;
   color: color-mix(in srgb, var(--default-color), transparent 15%);
   margin-bottom: 2.5rem;
@@ -2823,8 +2912,6 @@ section,
   box-shadow: 0 5px 20px color-mix(in srgb, var(--default-color), transparent 95%);
 }
 .department-details .department-details .info-sidebar .info-card h4 {
-  font-size: 1.3rem;
-  font-weight: 600;
   color: var(--heading-color);
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
@@ -2846,7 +2933,7 @@ section,
 }
 .department-details .department-details .info-sidebar .info-card .hours-list .hours-item span:last-child {
   color: var(--default-color);
-  font-weight: 600;
+  font-weight: var(--fw-bold);
 }
 .department-details .department-details .info-sidebar .info-card .quick-links a {
   display: flex;
@@ -2879,11 +2966,6 @@ section,
 @media (max-width: 991px) {
   .department-details .department-details .info-sidebar {
     margin-top: 3rem;
-  }
-}
-@media (max-width: 768px) {
-  .department-details .department-details .details-content h3 {
-    font-size: 1.8rem;
   }
 }
 
@@ -2945,8 +3027,8 @@ section,
   color: var(--contrast-color);
   padding: 5px 12px;
   border-radius: 15px;
-  font-size: 11px;
-  font-weight: 600;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
   z-index: 2;
 }
 .services .service-card > * {
@@ -2965,18 +3047,18 @@ section,
   color: var(--accent-color);
   padding: 6px 15px;
   border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: var(--ls-eyebrow);
 }
 .services .service-header .status-indicator {
   background: #28a745;
   color: var(--contrast-color);
   padding: 4px 10px;
   border-radius: 15px;
-  font-size: 10px;
-  font-weight: 600;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
   animation: pulse 2s infinite;
 }
 @keyframes pulse {
@@ -3006,8 +3088,6 @@ section,
   padding: 0 30px 20px;
 }
 .services .service-body h4 {
-  font-size: 22px;
-  font-weight: 700;
   color: var(--heading-color);
   margin-bottom: 15px;
   line-height: 1.3;
@@ -3016,7 +3096,7 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 25%);
   margin-bottom: 25px;
   line-height: 1.6;
-  font-size: 15px;
+  font-size: var(--fs-sm);
 }
 .services .service-features {
   display: flex;
@@ -3029,7 +3109,7 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   padding: 4px 12px;
   border-radius: 12px;
-  font-size: 11px;
+  font-size: var(--fs-xs);
   font-weight: 500;
 }
 .services .service-footer {
@@ -3046,8 +3126,8 @@ section,
   border-radius: 25px;
   color: var(--default-color);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-sm);
   transition: all 0.3s ease;
   width: 100%;
   justify-content: center;
@@ -3077,7 +3157,7 @@ section,
   padding: 0 20px;
 }
 .services .services-stats .stat-item .stat-number {
-  font-size: 48px;
+  font-size: var(--fs-stat);
   font-weight: 700;
   color: var(--accent-color);
   display: block;
@@ -3087,7 +3167,7 @@ section,
 .services .services-stats .stat-item .stat-label {
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   font-weight: 500;
-  font-size: 15px;
+  font-size: var(--fs-sm);
 }
 .services .appointment-banner {
   background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #007acc 30%));
@@ -3131,8 +3211,6 @@ section,
   }
 }
 .services .appointment-banner .banner-text h3 {
-  font-size: 32px;
-  font-weight: 700;
   color: var(--contrast-color);
   margin-bottom: 15px;
 }
@@ -3160,7 +3238,7 @@ section,
   padding: 15px 30px;
   border-radius: 25px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: var(--fw-bold);
   transition: all 0.3s ease;
   border: 2px solid var(--contrast-color);
 }
@@ -3176,7 +3254,7 @@ section,
   border: 2px solid color-mix(in srgb, var(--contrast-color), transparent 30%);
   border-radius: 25px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: var(--fw-bold);
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
@@ -3212,9 +3290,6 @@ section,
     padding: 0 25px 15px;
     text-align: center;
   }
-  .services .service-body h4 {
-    font-size: 20px;
-  }
   .services .service-footer {
     padding: 0 25px 25px;
   }
@@ -3224,14 +3299,8 @@ section,
   .services .services-stats .stat-item {
     margin-bottom: 30px;
   }
-  .services .services-stats .stat-item .stat-number {
-    font-size: 36px;
-  }
   .services .appointment-banner .banner-content {
     padding: 40px 25px;
-  }
-  .services .appointment-banner .banner-text h3 {
-    font-size: 26px;
   }
 }
 
@@ -3246,7 +3315,34 @@ section,
 .service-details-2 .service-image img {
   border-radius: 15px;
 }
+.service-details-2 .service-image .service-gallery {
+  --swiper-theme-color: var(--accent-color);
+  --swiper-navigation-size: 22px;
+  border-radius: 15px;
+}
+.service-details-2 .service-image .service-gallery .swiper-button-prev,
+.service-details-2 .service-image .service-gallery .swiper-button-next {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--surface-color), transparent 10%);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+.service-details-2 .service-image .service-gallery .swiper-button-prev::after,
+.service-details-2 .service-image .service-gallery .swiper-button-next::after {
+  font-size: 18px;
+  font-weight: var(--fw-bold);
+}
+.service-details-2 .service-image .service-gallery.swiper-horizontal > .swiper-pagination-bullets {
+  position: static;
+  margin-top: 14px;
+}
+.service-details-2 .service-image .service-gallery .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+}
 .service-details-2 .service-image .service-tag {
+  z-index: 2;
   position: absolute;
   top: 20px;
   left: 20px;
@@ -3254,23 +3350,17 @@ section,
   color: var(--contrast-color);
   padding: 8px 16px;
   border-radius: 25px;
-  font-size: 14px;
+  font-size: var(--fs-xs);
   font-weight: 500;
 }
+.service-details-2 .service-content h1,
 .service-details-2 .service-content h2 {
-  font-size: 2.5rem;
   margin-bottom: 1rem;
   line-height: 1.2;
 }
-@media (max-width: 768px) {
-  .service-details-2 .service-content h2 {
-    font-size: 2rem;
-  }
-}
 .service-details-2 .service-content .service-tagline {
-  font-size: 1.2rem;
+  font-size: var(--fs-lead);
   color: var(--accent-color);
-  font-weight: 500;
   margin-bottom: 1.5rem;
 }
 .service-details-2 .service-content p {
@@ -3283,7 +3373,6 @@ section,
   margin: 2rem 0;
 }
 .service-details-2 .service-content .service-features h4 {
-  font-size: 1.3rem;
   margin-bottom: 1rem;
   color: var(--heading-color);
 }
@@ -3318,7 +3407,7 @@ section,
   padding: 12px 28px;
   border-radius: 30px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: var(--fw-bold);
   transition: all 0.3s ease;
 }
 .service-details-2 .service-content .service-actions .btn-primary:hover {
@@ -3332,7 +3421,7 @@ section,
   border: 2px solid color-mix(in srgb, var(--default-color), transparent 80%);
   border-radius: 30px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: var(--fw-bold);
   transition: all 0.3s ease;
 }
 .service-details-2 .service-content .service-actions .btn-secondary:hover {
@@ -3367,7 +3456,6 @@ section,
   color: var(--accent-color);
 }
 .service-details-2 .service-card h4 {
-  font-size: 1.4rem;
   margin-bottom: 1rem;
 }
 .service-details-2 .service-card p {
@@ -3380,7 +3468,7 @@ section,
   gap: 0.5rem;
   color: var(--accent-color);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: var(--fw-bold);
   transition: all 0.3s ease;
 }
 .service-details-2 .service-card .card-link:hover {
@@ -3393,13 +3481,50 @@ section,
 .service-details-2 .service-card .card-link:hover i {
   transform: translateX(3px);
 }
+.service-details-2 .treatment-group {
+  margin-top: 4rem;
+}
+.service-details-2 .treatment-group-header {
+  max-width: 760px;
+  margin-bottom: 2rem;
+}
+.service-details-2 .treatment-group-header h3 {
+  margin-bottom: 0.5rem;
+}
+.service-details-2 .treatment-group-header p {
+  margin-bottom: 0;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+.service-details-2 .service-card.treatment-card {
+  text-align: left;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1rem;
+  align-items: center;
+  align-content: start;
+}
+.service-details-2 .service-card.treatment-card .card-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0;
+}
+.service-details-2 .service-card.treatment-card .card-icon i {
+  font-size: 1.5rem;
+}
+.service-details-2 .service-card.treatment-card h4 {
+  margin-bottom: 0;
+}
+.service-details-2 .service-card.treatment-card p {
+  grid-column: 1/-1;
+  margin: 1rem 0 0;
+  font-size: var(--fs-sm);
+}
 .service-details-2 .booking-section {
   background: color-mix(in srgb, var(--accent-color), transparent 95%);
   padding: 2rem;
   border-radius: 15px;
 }
 .service-details-2 .booking-section h3 {
-  font-size: 1.8rem;
   margin-bottom: 1rem;
   color: var(--heading-color);
 }
@@ -3430,12 +3555,11 @@ section,
 }
 .service-details-2 .booking-section .availability-info .info-item div strong {
   color: var(--heading-color);
-  font-weight: 600;
   margin-bottom: 0.2rem;
 }
 .service-details-2 .booking-section .availability-info .info-item div span {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
-  font-size: 0.9rem;
+  font-size: var(--fs-sm);
 }
 .service-details-2 .appointment-card {
   background: var(--surface-color);
@@ -3445,7 +3569,6 @@ section,
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 .service-details-2 .appointment-card h4 {
-  font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 .service-details-2 .appointment-card p {
@@ -3459,7 +3582,7 @@ section,
   padding: 15px 30px;
   border-radius: 30px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: var(--fw-bold);
   width: 100%;
   transition: all 0.3s ease;
   margin-bottom: 1.5rem;
@@ -3470,7 +3593,7 @@ section,
 }
 .service-details-2 .appointment-card .contact-alternative {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: var(--fs-sm);
 }
 .service-details-2 .appointment-card .contact-alternative span {
   color: color-mix(in srgb, var(--default-color), transparent 40%);
@@ -3480,7 +3603,7 @@ section,
 .service-details-2 .appointment-card .contact-alternative a {
   color: var(--accent-color);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: var(--fw-bold);
 }
 .service-details-2 .appointment-card .contact-alternative a:hover {
   color: color-mix(in srgb, var(--accent-color), black 10%);
@@ -3519,7 +3642,7 @@ section,
   border: 1px solid color-mix(in srgb, var(--accent-color), transparent 20%);
   padding: 0.55rem 1rem;
   border-radius: 10px;
-  font-weight: 600;
+  font-weight: var(--fw-bold);
   transition: all 0.3s ease;
 }
 .doctors .btn-appointment:hover {
@@ -3536,7 +3659,7 @@ section,
   border: 1px solid color-mix(in srgb, var(--accent-color), transparent 75%);
   padding: 0.55rem 1rem;
   border-radius: 10px;
-  font-weight: 600;
+  font-weight: var(--fw-bold);
   transition: all 0.3s ease;
 }
 .doctors .btn-soft:hover {
@@ -3552,7 +3675,7 @@ section,
   box-shadow: var(--shadow);
 }
 .doctors .doctor-directory .directory-bar .form-label {
-  font-weight: 600;
+  font-weight: var(--fw-medium);
   color: var(--heading-color);
 }
 .doctors .doctor-directory .directory-bar .search-icon {
@@ -3684,16 +3807,17 @@ section,
   padding: 16px;
 }
 .doctors .doctor-card .doctor-content .doctor-name {
-  font-size: 1.1rem;
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-subheading);
   margin: 0 0 4px;
 }
 .doctors .doctor-card .doctor-content .doctor-title {
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
   margin-bottom: 10px;
 }
 .doctors .doctor-card .doctor-content .doctor-desc {
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
   margin-bottom: 12px;
 }
 .doctors .doctor-card .doctor-content .doctor-meta {
@@ -3779,7 +3903,7 @@ section,
   border: 1px solid color-mix(in srgb, var(--accent-color), transparent 60%);
 }
 .doctors .single-profile .profile-content .name {
-  font-size: 1.6rem;
+  font-size: var(--fs-h3);
 }
 .doctors .single-profile .profile-content .title {
   color: var(--muted);
@@ -3818,11 +3942,12 @@ section,
   margin-top: 8px;
 }
 .doctors .compact-view .minimal-card .info h4 {
-  font-size: 0.98rem;
+  font-size: var(--fs-h5);
 }
 .doctors .compact-view .minimal-card .info small {
   color: var(--muted);
-  font-weight: 600;
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-sm);
 }
 .doctors {
   /* Tabs Profile */
@@ -3907,12 +4032,39 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Our Staff page (/about/our-staff)
+--------------------------------------------------------------*/
+.our-staff .doctor-card .doctor-media img {
+  height: auto;
+  aspect-ratio: 4/5;
+  object-position: center 20%;
+}
+.our-staff .single-profile .profile-media img {
+  aspect-ratio: 4/5;
+  object-position: center 20%;
+  min-height: 0;
+}
+
+#apply .appointment-banner .banner-text {
+  flex: 1 1 auto;
+}
+#apply .appointment-banner .banner-text p {
+  max-width: 640px;
+}
+#apply .appointment-banner .banner-text a {
+  color: var(--contrast-color);
+  text-decoration: underline;
+  font-weight: var(--fw-bold);
+}
+#apply .appointment-banner .banner-actions {
+  flex-shrink: 0;
+}
+
+/*--------------------------------------------------------------
 # Appointmnet Section
 --------------------------------------------------------------*/
 .appointmnet .appointment-info h3 {
   color: var(--heading-color);
-  font-size: 2rem;
-  font-weight: 700;
   margin-bottom: 1rem;
 }
 .appointmnet .appointment-info p {
@@ -3936,13 +4088,11 @@ section,
 }
 .appointmnet .info-items .info-item h5 {
   color: var(--heading-color);
-  font-size: 1.1rem;
-  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 .appointmnet .info-items .info-item p {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
-  font-size: 0.9rem;
+  font-size: var(--fs-sm);
   line-height: 1.5;
 }
 .appointmnet .emergency-contact .emergency-card {
@@ -3952,14 +4102,13 @@ section,
 }
 .appointmnet .emergency-contact .emergency-card h6 {
   color: var(--heading-color);
-  font-weight: 600;
 }
 .appointmnet .emergency-contact .emergency-card h6 i {
   color: var(--accent-color);
 }
 .appointmnet .emergency-contact .emergency-card p {
   color: var(--default-color);
-  font-size: 0.9rem;
+  font-size: var(--fs-sm);
 }
 .appointmnet .emergency-contact .emergency-card p strong {
   color: var(--accent-color);
@@ -4038,7 +4187,7 @@ section,
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: var(--fs-lead);
   z-index: 2;
 }
 .appointmnet .process-steps .step-item .step-icon {
@@ -4050,13 +4199,12 @@ section,
 }
 .appointmnet .process-steps .step-item h5 {
   color: var(--heading-color);
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: var(--fs-h4);
   margin-bottom: 0.75rem;
 }
 .appointmnet .process-steps .step-item p {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
-  font-size: 0.9rem;
+  font-size: var(--fs-sm);
   line-height: 1.6;
   margin-bottom: 0;
 }
@@ -4089,6 +4237,239 @@ section,
   .appointmnet .process-steps .step-item {
     padding: 1.5rem 0.5rem;
   }
+}
+
+.appointmnet .call-card {
+  padding: 2.5rem 2rem;
+}
+.appointmnet .call-card .call-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+}
+.appointmnet .call-card .call-icon i {
+  font-size: 2rem;
+  color: var(--accent-color);
+}
+.appointmnet .call-card .call-heading {
+  color: var(--heading-color);
+  font-size: var(--fs-h3);
+  margin-bottom: 0.5rem;
+}
+.appointmnet .call-card .call-number {
+  background-color: var(--accent-color);
+  border: none;
+  color: var(--contrast-color);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  padding: 0.85rem 2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.appointmnet .call-card .call-number:hover {
+  background-color: color-mix(in srgb, var(--accent-color), black 10%);
+  transform: translateY(-2px);
+}
+.appointmnet .call-card .call-secondary {
+  font-size: var(--fs-sm);
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+/*--------------------------------------------------------------
+# Membership Plan (/resources/insurance) and Join page (/resources/insurance/join)
+--------------------------------------------------------------*/
+.membership .plan-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--default-color), transparent 94%);
+}
+.membership .plan-card.featured {
+  border: 2px solid var(--accent-color);
+  box-shadow: 0 14px 34px color-mix(in srgb, var(--accent-color), transparent 82%);
+}
+.membership .plan-header {
+  text-align: center;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+}
+.membership .plan-name {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-subheading);
+  margin-bottom: 0.25rem;
+}
+.membership .plan-ages {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 0.75rem;
+}
+.membership .plan-price {
+  margin-bottom: 0.25rem;
+  color: var(--heading-color);
+}
+.membership .plan-price .amount {
+  font-family: var(--heading-font);
+  font-size: var(--fs-stat);
+  font-weight: var(--fw-heading);
+  line-height: 1;
+}
+.membership .plan-price .period {
+  font-size: var(--fs-body);
+  margin-left: 2px;
+}
+.membership .plan-yearly {
+  font-size: var(--fs-sm);
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  margin-bottom: 0.75rem;
+}
+.membership .plan-savings {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+}
+.membership .plan-includes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.membership .plan-includes li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  margin-bottom: 0.6rem;
+}
+.membership .plan-includes li:last-child {
+  margin-bottom: 0;
+}
+.membership .plan-includes i {
+  color: var(--accent-color);
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+.membership .benefit-item {
+  display: flex;
+  gap: 0.875rem;
+  align-items: flex-start;
+}
+.membership .benefit-item > i {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  flex-shrink: 0;
+}
+.membership .benefit-item h4 {
+  font-size: var(--fs-h5);
+  margin-bottom: 0.25rem;
+}
+.membership .benefit-item p {
+  font-size: var(--fs-sm);
+  margin-bottom: 0;
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+}
+.membership .membership-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+.membership .membership-cta .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 54px;
+  padding: 0 1.75rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.membership .membership-cta .btn-primary i {
+  font-size: 1.1rem;
+}
+.membership .membership-cta .btn-primary:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.membership .membership-cta .btn-primary:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent-color), transparent 50%);
+  outline-offset: 3px;
+}
+.membership .membership-cta .btn-primary {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: 0;
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--accent-color), transparent 65%);
+}
+.membership .membership-cta .btn-primary:hover, .membership .membership-cta .btn-primary:focus {
+  background: color-mix(in srgb, var(--accent-color), black 12%);
+  color: var(--contrast-color);
+}
+.membership .membership-cta .btn-primary:hover {
+  box-shadow: 0 14px 28px color-mix(in srgb, var(--accent-color), transparent 55%);
+}
+.membership .membership-cta p {
+  max-width: 560px;
+  margin: 1rem auto 0;
+  font-size: var(--fs-sm);
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+.membership .membership-footnotes {
+  max-width: 760px;
+  margin: 2rem auto 0;
+  text-align: center;
+}
+.membership .membership-footnotes p {
+  font-size: var(--fs-xs);
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin-bottom: 0.5rem;
+}
+
+.membership-join .join-intro {
+  max-width: 760px;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+}
+.membership-join .join-intro p {
+  font-size: var(--fs-lead);
+}
+.membership-join .join-frame {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--default-color), transparent 92%);
+}
+.membership-join .join-frame iframe {
+  display: block;
+  width: 100%;
+  height: max(640px, 100vh - 160px);
+  border: 0;
+}
+.membership-join .join-fallback {
+  text-align: center;
+  font-size: var(--fs-sm);
+  margin: 1rem 0 0;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
 
 /*--------------------------------------------------------------
@@ -4295,17 +4676,17 @@ section,
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
   border-radius: 5px;
   overflow: hidden;
+  cursor: pointer;
 }
 .faq .faq-container .faq-item:last-child {
   margin-bottom: 0;
 }
 .faq .faq-container .faq-item h3 {
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: var(--fw-subheading);
+  font-size: var(--fs-h5);
   line-height: 24px;
   margin: 0 30px 0 0;
   transition: 0.3s;
-  cursor: pointer;
   display: flex;
   align-items: center;
 }
@@ -4313,7 +4694,7 @@ section,
   color: var(--accent-color);
   padding-right: 5px;
 }
-.faq .faq-container .faq-item h3:hover {
+.faq .faq-container .faq-item:hover h3, .faq .faq-container .faq-item:hover .faq-toggle {
   color: var(--accent-color);
 }
 .faq .faq-container .faq-item .faq-content {
@@ -4334,10 +4715,6 @@ section,
   font-size: 16px;
   line-height: 0;
   transition: 0.3s;
-  cursor: pointer;
-}
-.faq .faq-container .faq-item .faq-toggle:hover {
-  color: var(--accent-color);
 }
 .faq .faq-container .faq-active {
   background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
@@ -4388,14 +4765,14 @@ section,
   line-height: 1;
 }
 .contact .info-box h3 {
-  font-size: 20px;
+  font-size: var(--fs-h4);
   margin-bottom: 15px;
-  font-weight: 600;
+  font-weight: var(--fw-subheading);
 }
 .contact .info-box p {
   padding: 0;
   line-height: 24px;
-  font-size: 15px;
+  font-size: var(--fs-sm);
   margin-bottom: 0;
 }
 .contact .map-container {
@@ -4501,9 +4878,6 @@ section,
     font-size: 28px;
     padding: 12px;
   }
-  .contact .info-box h3 {
-    font-size: 18px;
-  }
   .contact .social-links {
     gap: 12px;
   }
@@ -4526,16 +4900,16 @@ section,
   background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
   border-radius: 30px;
   color: var(--accent-color);
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
   margin-bottom: 20px;
 }
+.terms-of-service .tos-header h1,
 .terms-of-service .tos-header h2 {
-  font-size: 2.5rem;
   margin-bottom: 15px;
 }
 .terms-of-service .tos-header p {
   color: color-mix(in srgb, var(--default-color), transparent 30%);
-  font-size: 1.1rem;
+  font-size: var(--fs-lead);
   max-width: 700px;
   margin: 0 auto;
 }
@@ -4547,7 +4921,6 @@ section,
   margin-bottom: 0;
 }
 .terms-of-service .tos-content .content-section h3 {
-  font-size: 1.8rem;
   margin-bottom: 20px;
   color: var(--heading-color);
 }
@@ -4575,7 +4948,7 @@ section,
 }
 .terms-of-service .tos-content .content-section .info-box p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
 }
 .terms-of-service .tos-content .content-section .list-items {
   list-style: none;
@@ -4616,12 +4989,11 @@ section,
   flex-shrink: 0;
 }
 .terms-of-service .tos-content .content-section .alert-box .alert-content h5 {
-  font-size: 1.1rem;
   margin-bottom: 8px;
 }
 .terms-of-service .tos-content .content-section .alert-box .alert-content p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
 }
 .terms-of-service .tos-content .content-section .prohibited-list {
   display: grid;
@@ -4647,7 +5019,7 @@ section,
   font-size: 1.2rem;
 }
 .terms-of-service .tos-content .content-section .prohibited-list .prohibited-item span {
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
 .terms-of-service .tos-content .content-section .disclaimer-box {
@@ -4670,7 +5042,7 @@ section,
   padding-left: 25px;
   margin-bottom: 12px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
 }
 .terms-of-service .tos-content .content-section .disclaimer-box ul li:last-child {
   margin-bottom: 0;
@@ -4697,7 +5069,7 @@ section,
 }
 .terms-of-service .tos-content .content-section .notice-box p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
 }
 .terms-of-service .tos-contact {
   margin-top: 60px;
@@ -4734,7 +5106,6 @@ section,
   flex: 1;
 }
 .terms-of-service .tos-contact .contact-box .contact-content h4 {
-  font-size: 1.4rem;
   margin-bottom: 8px;
 }
 .terms-of-service .tos-contact .contact-box .contact-content p {
@@ -4750,7 +5121,7 @@ section,
   color: var(--contrast-color);
   border-radius: 30px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: var(--fw-bold);
   transition: all 0.3s;
 }
 .terms-of-service .tos-contact .contact-box .contact-content .contact-link:hover {
@@ -4770,7 +5141,7 @@ section,
 # Privacy Section
 --------------------------------------------------------------*/
 .privacy .privacy-content {
-  font-size: 16px;
+  font-size: var(--fs-body);
   line-height: 1.7;
 }
 .privacy .privacy-content .last-updated {
@@ -4788,7 +5159,6 @@ section,
   margin-bottom: 50px;
 }
 .privacy .privacy-content .privacy-section h3 {
-  font-size: 28px;
   margin-bottom: 25px;
   color: var(--heading-color);
   position: relative;
@@ -4806,12 +5176,10 @@ section,
 }
 .privacy .privacy-content .privacy-section h4 {
   color: var(--heading-color);
-  font-size: 22px;
   margin: 30px 0 15px 0;
 }
 .privacy .privacy-content .privacy-section h5 {
   color: var(--heading-color);
-  font-size: 18px;
   margin-bottom: 10px;
 }
 .privacy .privacy-content .privacy-section p {
@@ -4887,7 +5255,7 @@ section,
 }
 .privacy .privacy-content .privacy-section .security-measures .measure-item p {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--fs-sm);
 }
 .privacy .privacy-content .privacy-section .rights-list {
   margin: 30px 0;
@@ -4921,7 +5289,7 @@ section,
 }
 .privacy .privacy-content .privacy-section .rights-list .right-item div p {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--fs-sm);
 }
 .privacy .privacy-content .privacy-section .cookie-types {
   margin: 30px 0;
@@ -4943,7 +5311,7 @@ section,
 .privacy .privacy-content .privacy-section .cookie-types .table-responsive .table thead th {
   border: none;
   color: var(--heading-color);
-  font-weight: 600;
+  font-weight: var(--fw-bold);
   padding: 15px 20px;
 }
 .privacy .privacy-content .privacy-section .cookie-types .table-responsive .table tbody td {
@@ -4985,15 +5353,6 @@ section,
   color: var(--default-color);
 }
 @media (max-width: 768px) {
-  .privacy .privacy-content {
-    font-size: 15px;
-  }
-  .privacy .privacy-content .privacy-section h3 {
-    font-size: 24px;
-  }
-  .privacy .privacy-content .privacy-section h4 {
-    font-size: 20px;
-  }
   .privacy .privacy-content .privacy-section .security-measures .row > div {
     margin-bottom: 20px;
   }
@@ -5066,17 +5425,17 @@ section,
   display: inline-block;
   background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
   color: var(--accent-color);
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
   padding: 0.5rem 1.5rem;
   border-radius: 30px;
   margin-bottom: 1.5rem;
-  letter-spacing: 1px;
+  letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
 }
 .error-404 .error-code {
   font-size: clamp(5rem, 10vw, 8rem);
-  font-weight: 900;
+  font-weight: var(--fw-heading);
   margin: 0;
   background: linear-gradient(135deg, var(--heading-color), var(--accent-color));
   -webkit-background-clip: text;
@@ -5086,13 +5445,11 @@ section,
   letter-spacing: -2px;
 }
 .error-404 .error-title {
-  font-size: 2.5rem;
-  font-weight: 700;
   color: var(--heading-color);
   margin-bottom: 1.5rem;
 }
 .error-404 .error-description {
-  font-size: 1.1rem;
+  font-size: var(--fs-lead);
   color: color-mix(in srgb, var(--default-color), transparent 15%);
   margin-bottom: 2rem;
   line-height: 1.6;
@@ -5107,7 +5464,7 @@ section,
 .error-404 .error-actions .btn-help {
   padding: 0.8rem 1.8rem;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: var(--fw-bold);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -5142,8 +5499,8 @@ section,
   border-radius: 12px;
 }
 .error-404 .error-suggestions h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-subheading);
   color: var(--heading-color);
   margin-bottom: 1rem;
 }
@@ -5163,7 +5520,7 @@ section,
   align-items: center;
   gap: 0.5rem;
   color: var(--default-color);
-  font-size: 1.05rem;
+  font-size: var(--fs-body);
   transition: all 0.3s;
 }
 .error-404 .error-suggestions ul li a i {
@@ -5205,9 +5562,6 @@ section,
   }
   .error-404 .error-code {
     font-size: clamp(4rem, 12vw, 6rem);
-  }
-  .error-404 .error-title {
-    font-size: 1.8rem;
   }
   .error-404 .error-actions {
     flex-direction: column;

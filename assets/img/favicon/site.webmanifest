@@ -1,0 +1,12 @@
+{
+  "name": "Anissa Anast Dental Office",
+  "short_name": "Anast Dental",
+  "icons": [
+    { "src": "/website-staging/assets/img/favicon/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/website-staging/assets/img/favicon/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ],
+  "start_url": "/website-staging/",
+  "display": "browser",
+  "theme_color": "#7b59c0",
+  "background_color": "#ffffff"
+}
