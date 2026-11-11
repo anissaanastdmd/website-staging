@@ -192,6 +192,8 @@
 
 <body class="insurance-page">
 
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
@@ -199,16 +201,16 @@
         <img src="/website-staging/assets/img/logo.png" alt="Anissa Anast Dental Office">
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
+      <nav id="navmenu" class="navmenu" aria-label="Main">
+        <ul id="navmenu-list">
           <li><a href="/website-staging/">Home</a></li>
-          <li class="dropdown"><a href="/website-staging/about"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/about"><span>About</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="About submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/about">Our Story</a></li>
     <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/services"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/services"><span>Services</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Services submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/services/general-dentistry">General Dentistry</a></li>
     <li><a href="/website-staging/services/restorative-dentistry">Restorative Dentistry</a></li>
@@ -216,7 +218,7 @@
     <li><a href="/website-staging/services/injectables-and-threads">Injectables &amp; Threads</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/resources" class="active"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/resources" class="active"><span>Resources</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Resources submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/resources/faq">FAQ</a></li>
     <li><a href="/website-staging/resources/new-patients">New Patients</a></li>
@@ -225,7 +227,7 @@
 </li>
           <li><a href="/website-staging/contact">Contact</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-lg-none bi bi-list"></i>
+        <button type="button" class="mobile-nav-toggle d-lg-none" aria-label="Open menu" aria-expanded="false" aria-controls="navmenu-list"><i class="bi bi-list" aria-hidden="true"></i></button>
       </nav>
 
       <a class="btn-getstarted" href="/website-staging/request-appointment">Request Appointment</a>
@@ -234,11 +236,11 @@
   </header>
 
 
-  <main class="main">
+  <main id="main" class="main" tabindex="-1">
 
     <!-- Page Title -->
     <div class="page-title">
-      <nav class="breadcrumbs">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
         <div class="container">
           <ol>
             <li><a href="/website-staging/">Home</a></li>
@@ -275,7 +277,7 @@
           <p>Our team is happy to help you understand your coverage, submit insurance claims when applicable, and explain what you can expect before your appointment.</p>
 
           <div class="service-features">
-            <h4>How We Can Help:</h4>
+            <h2>How We Can Help:</h2>
             <ul>
               <li><i class="bi bi-check-circle" aria-hidden="true"></i> Accept all PPO dental insurance plans</li>
               <li><i class="bi bi-check-circle" aria-hidden="true"></i> Help you understand your coverage</li>
@@ -301,7 +303,7 @@
           <div class="card-icon">
             <i class="bi bi-question-circle" aria-hidden="true"></i>
           </div>
-          <h4>What Does Out of Network Mean?</h4>
+          <h2>What Does Out of Network Mean?</h2>
           <p>Being out of network does not mean you cannot use your insurance. It simply means our office does not have a contracted rate with your insurance company. Depending on your plan, out-of-network benefits should cover a portion of your treatment, with many diagnostic and preventative services being covered at 100%.</p>
           <p>Our goal is to make your dental care experience as smooth and transparent as possible!</p>
         </div>
@@ -314,7 +316,7 @@
               <div class="card-icon">
                 <i class="bi bi-shield-check" aria-hidden="true"></i>
               </div>
-              <h4>All PPO Plans Accepted</h4>
+              <h2>All PPO Plans Accepted</h2>
               <p>We accept all PPO dental insurances, in network or out of network.</p>
             </div>
           </div>
@@ -323,7 +325,7 @@
               <div class="card-icon">
                 <i class="bi bi-file-earmark-check" aria-hidden="true"></i>
               </div>
-              <h4>Claims Submitted for You</h4>
+              <h2>Claims Submitted for You</h2>
               <p>Our team submits insurance claims when applicable, so you can focus on your care.</p>
             </div>
           </div>
@@ -431,7 +433,7 @@
         <div class="benefit-item">
           <i class="bi bi-lightning-charge" aria-hidden="true"></i>
           <div>
-            <h4>Effective immediately</h4>
+            <h3>Effective immediately</h3>
             <p>No waiting periods. Your membership starts as soon as you sign up.</p>
           </div>
         </div>
@@ -440,7 +442,7 @@
         <div class="benefit-item">
           <i class="bi bi-infinity" aria-hidden="true"></i>
           <div>
-            <h4>No deductibles or maximums</h4>
+            <h3>No deductibles or maximums</h3>
             <p>No yearly caps and no insurance claims to deal with.</p>
           </div>
         </div>
@@ -449,7 +451,7 @@
         <div class="benefit-item">
           <i class="bi bi-people" aria-hidden="true"></i>
           <div>
-            <h4>Add your family</h4>
+            <h3>Add your family</h3>
             <p>Add family members when you enroll or any time after.</p>
           </div>
         </div>
@@ -458,7 +460,7 @@
         <div class="benefit-item">
           <i class="bi bi-credit-card" aria-hidden="true"></i>
           <div>
-            <h4>HSA & FSA friendly</h4>
+            <h3>HSA & FSA friendly</h3>
             <p>Pay monthly or yearly. Most HSA and FSA cards are accepted.</p>
           </div>
         </div>
@@ -488,7 +490,7 @@
 
       <div class="col-lg-8">
         <div class="booking-section">
-          <h3>Questions About Your Coverage?</h3>
+          <h2>Questions About Your Coverage?</h2>
           <p>Give us a call with your insurance information and we'll help you understand your benefits before your visit.</p>
 
           <div class="availability-info">
@@ -519,7 +521,7 @@
 
       <div class="col-lg-4">
         <div class="appointment-card">
-          <h4>Book Your Visit</h4>
+          <h2>Book Your Visit</h2>
           <p>Give us a call and we'll find a time that works for you.</p>
           <a href="/website-staging/request-appointment" class="btn-appointment">Request Appointment</a>
           <div class="contact-alternative">
@@ -557,7 +559,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Quick Links</h4>
+          <h2>Quick Links</h2>
           <ul>
             <li><a href="/website-staging/">Home</a></li>
             <li><a href="/website-staging/about">About</a></li>
@@ -569,7 +571,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>About</h4>
+          <h2>About</h2>
           <ul>
             <li><a href="/website-staging/about">Our Story</a></li>
             <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
@@ -577,7 +579,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Services</h4>
+          <h2>Services</h2>
           <ul>
             <li><a href="/website-staging/services/general-dentistry">General Dentistry</a></li>
             <li><a href="/website-staging/services/restorative-dentistry">Restorative Dentistry</a></li>
@@ -587,7 +589,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Resources</h4>
+          <h2>Resources</h2>
           <ul>
             <li><a href="/website-staging/resources/faq">FAQ</a></li>
             <li><a href="/website-staging/resources/new-patients">New Patients</a></li>

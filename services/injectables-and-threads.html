@@ -202,6 +202,8 @@
 
 <body class="service-details-page">
 
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
@@ -209,16 +211,16 @@
         <img src="/website-staging/assets/img/logo.png" alt="Anissa Anast Dental Office">
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
+      <nav id="navmenu" class="navmenu" aria-label="Main">
+        <ul id="navmenu-list">
           <li><a href="/website-staging/">Home</a></li>
-          <li class="dropdown"><a href="/website-staging/about"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/about"><span>About</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="About submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/about">Our Story</a></li>
     <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/services" class="active"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/services" class="active"><span>Services</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Services submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/services/general-dentistry">General Dentistry</a></li>
     <li><a href="/website-staging/services/restorative-dentistry">Restorative Dentistry</a></li>
@@ -226,7 +228,7 @@
     <li><a href="/website-staging/services/injectables-and-threads" class="active">Injectables &amp; Threads</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/resources"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/resources"><span>Resources</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Resources submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/resources/faq">FAQ</a></li>
     <li><a href="/website-staging/resources/new-patients">New Patients</a></li>
@@ -235,7 +237,7 @@
 </li>
           <li><a href="/website-staging/contact">Contact</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-lg-none bi bi-list"></i>
+        <button type="button" class="mobile-nav-toggle d-lg-none" aria-label="Open menu" aria-expanded="false" aria-controls="navmenu-list"><i class="bi bi-list" aria-hidden="true"></i></button>
       </nav>
 
       <a class="btn-getstarted" href="/website-staging/request-appointment">Request Appointment</a>
@@ -244,11 +246,11 @@
   </header>
 
 
-  <main class="main">
+  <main id="main" class="main" tabindex="-1">
 
     <!-- Page Title -->
     <div class="page-title">
-      <nav class="breadcrumbs">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
         <div class="container">
           <ol>
             <li><a href="/website-staging/">Home</a></li>
@@ -304,7 +306,7 @@
           <p>Each treatment is tailored to your individual needs, with a focus on natural-looking results. During your consultation, Dr. Anast will discuss your goals and determine the most appropriate treatment options for you.</p>
 
           <div class="service-features">
-            <h4>Our Injectables & Threads Services Include:</h4>
+            <h2>Our Injectables & Threads Services Include:</h2>
             <ul>
               <li><i class="bi bi-check-circle" aria-hidden="true"></i> Botox</li>
               <li><i class="bi bi-check-circle" aria-hidden="true"></i> Dermal fillers</li>
@@ -327,7 +329,7 @@
             <div class="card-icon">
               <i class="bi bi-magic" aria-hidden="true"></i>
             </div>
-            <h4>Botox Treatments</h4>
+            <h3>Botox Treatments</h3>
             <p>Dr. Anast is a member of the American Academy of Facial Esthetics (AAFE) and offers Botox treatments to help soften the appearance of expression lines and wrinkles for a smoother, refreshed look. Depending on your goals and clinical suitability, Botox may also be used for certain therapeutic concerns, such as jaw muscle tension. Each treatment is tailored to your individual needs, with a focus on natural-looking results.</p>
           </div>
         </div>
@@ -336,7 +338,7 @@
             <div class="card-icon">
               <i class="bi bi-droplet-half" aria-hidden="true"></i>
             </div>
-            <h4>Dermal Fillers</h4>
+            <h3>Dermal Fillers</h3>
             <p>Dr. Anast's training in facial esthetics and membership in the American Academy of Facial Esthetics (AAFE) complement our office's approach to personalized cosmetic care. Dermal fillers can help restore facial volume, enhance natural contours, and soften the appearance of certain facial lines. During your consultation, Dr. Anast will discuss your aesthetic goals and determine the most appropriate treatment options for you.</p>
           </div>
         </div>
@@ -345,7 +347,7 @@
             <div class="card-icon">
               <i class="bi bi-bezier2" aria-hidden="true"></i>
             </div>
-            <h4>Threads</h4>
+            <h3>Threads</h3>
             <p>Thread treatments gently lift and support the skin to help define facial contours.</p>
           </div>
         </div>
@@ -356,7 +358,7 @@
 
       <div class="col-lg-8">
         <div class="booking-section">
-          <h3>Ready to Schedule Your Visit?</h3>
+          <h2>Ready to Schedule Your Visit?</h2>
           <p>Give us a call to schedule your visit. We're happy to answer questions about injectables & threads and help you explore your treatment options.</p>
 
           <div class="availability-info">
@@ -387,7 +389,7 @@
 
       <div class="col-lg-4">
         <div class="appointment-card">
-          <h4>Book Your Visit</h4>
+          <h2>Book Your Visit</h2>
           <p>Give us a call and we'll find a time that works for you.</p>
           <a href="/website-staging/request-appointment" class="btn-appointment">Request Appointment</a>
           <div class="contact-alternative">
@@ -470,7 +472,7 @@
             <span class="service-category">Preventive</span>
           </div>
           <div class="service-body">
-            <h4>General Dentistry</h4>
+            <h3>General Dentistry</h3>
             <p>Regular examinations, cleanings, and gum care help maintain oral health and identify concerns early, with personalized oral hygiene education for patients of all ages.</p>
             <div class="service-features">
               <span class="feature-badge">Dental exams &amp; cleanings</span>
@@ -498,7 +500,7 @@
             <span class="service-category">Restorative</span>
           </div>
           <div class="service-body">
-            <h4>Restorative Dentistry</h4>
+            <h3>Restorative Dentistry</h3>
             <p>Treatments that restore the shape, strength, appearance, and function of teeth affected by decay or damage, options to replace missing teeth, and prompt care for dental emergencies.</p>
             <div class="service-features">
               <span class="feature-badge">Dental emergencies</span>
@@ -527,7 +529,7 @@
             <span class="service-category">Cosmetic</span>
           </div>
           <div class="service-body">
-            <h4>Cosmetic Dentistry</h4>
+            <h3>Cosmetic Dentistry</h3>
             <p>Cosmetic options designed to enhance the appearance of your teeth and overall smile, with consultations to help you choose what's right for you.</p>
             <div class="service-features">
               <span class="feature-badge">Clear aligners</span>
@@ -571,7 +573,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Quick Links</h4>
+          <h2>Quick Links</h2>
           <ul>
             <li><a href="/website-staging/">Home</a></li>
             <li><a href="/website-staging/about">About</a></li>
@@ -583,7 +585,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>About</h4>
+          <h2>About</h2>
           <ul>
             <li><a href="/website-staging/about">Our Story</a></li>
             <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
@@ -591,7 +593,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Services</h4>
+          <h2>Services</h2>
           <ul>
             <li><a href="/website-staging/services/general-dentistry">General Dentistry</a></li>
             <li><a href="/website-staging/services/restorative-dentistry">Restorative Dentistry</a></li>
@@ -601,7 +603,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Resources</h4>
+          <h2>Resources</h2>
           <ul>
             <li><a href="/website-staging/resources/faq">FAQ</a></li>
             <li><a href="/website-staging/resources/new-patients">New Patients</a></li>

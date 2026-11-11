@@ -33,12 +33,22 @@
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
   function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
+    const open = document.querySelector('body').classList.toggle('mobile-nav-active');
+    const icon = mobileNavToggleBtn.querySelector('i');
+    icon.classList.toggle('bi-list', !open);
+    icon.classList.toggle('bi-x', open);
+    mobileNavToggleBtn.setAttribute('aria-expanded', open);
+    mobileNavToggleBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   }
   if (mobileNavToggleBtn) {
     mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+    // Escape closes the mobile menu and returns focus to the button
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && document.querySelector('.mobile-nav-active')) {
+        mobileNavToogle();
+        mobileNavToggleBtn.focus();
+      }
+    });
   }
 
   /**
@@ -56,11 +66,13 @@
   /**
    * Toggle mobile nav dropdowns
    */
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
+  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(button => {
+    button.addEventListener('click', function(e) {
       e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+      const submenu = this.nextElementSibling;
+      const open = submenu.classList.toggle('dropdown-active');
+      this.classList.toggle('active', open);
+      this.setAttribute('aria-expanded', open);
       e.stopImmediatePropagation();
     });
   });
@@ -120,17 +132,48 @@
   /**
    * Init swiper sliders
    */
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   function initSwiper() {
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
+      const autoplayToggle = swiperElement.parentElement.querySelector('[data-autoplay-toggle]');
 
-      if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
-      } else {
-        new Swiper(swiperElement, config);
+      // No automatic sliding for people who ask their device to reduce motion
+      if (prefersReducedMotion) {
+        delete config.autoplay;
+        if (autoplayToggle) autoplayToggle.hidden = true;
       }
+
+      const swiper = new Swiper(swiperElement, config);
+
+      if (swiper && config.autoplay && autoplayToggle) {
+        initAutoplayControls(swiper, swiperElement, autoplayToggle);
+      }
+    });
+  }
+
+  // Pause/play button for auto-advancing sliders (WCAG 2.2.2), plus pausing while
+  // keyboard focus is inside the slider so content doesn't move while being read.
+  function initAutoplayControls(swiper, swiperElement, button) {
+    let pausedByUser = false;
+    const label = button.querySelector('span');
+    const icon = button.querySelector('i');
+
+    button.addEventListener('click', () => {
+      pausedByUser = !pausedByUser;
+      if (pausedByUser) swiper.autoplay.stop(); else swiper.autoplay.start();
+      button.setAttribute('aria-pressed', pausedByUser);
+      label.textContent = pausedByUser ? 'Play reviews' : 'Pause reviews';
+      icon.classList.toggle('bi-pause-fill', !pausedByUser);
+      icon.classList.toggle('bi-play-fill', pausedByUser);
+    });
+
+    swiperElement.addEventListener('focusin', () => swiper.autoplay.stop());
+    swiperElement.addEventListener('focusout', (e) => {
+      if (!swiperElement.contains(e.relatedTarget) && !pausedByUser) swiper.autoplay.start();
     });
   }
 
@@ -145,7 +188,9 @@
     faqItem.addEventListener('click', (event) => {
       if (event.target.closest('a')) return;
       if (window.getSelection().toString()) return;
-      faqItem.classList.toggle('faq-active');
+      const open = faqItem.classList.toggle('faq-active');
+      const button = faqItem.querySelector('.faq-question button');
+      if (button) button.setAttribute('aria-expanded', open);
     });
   });
 

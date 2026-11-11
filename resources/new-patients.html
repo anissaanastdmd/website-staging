@@ -192,6 +192,8 @@
 
 <body class="new-patients-page">
 
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
@@ -199,16 +201,16 @@
         <img src="/website-staging/assets/img/logo.png" alt="Anissa Anast Dental Office">
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
+      <nav id="navmenu" class="navmenu" aria-label="Main">
+        <ul id="navmenu-list">
           <li><a href="/website-staging/">Home</a></li>
-          <li class="dropdown"><a href="/website-staging/about"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/about"><span>About</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="About submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/about">Our Story</a></li>
     <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/services"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/services"><span>Services</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Services submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/services/general-dentistry">General Dentistry</a></li>
     <li><a href="/website-staging/services/restorative-dentistry">Restorative Dentistry</a></li>
@@ -216,7 +218,7 @@
     <li><a href="/website-staging/services/injectables-and-threads">Injectables &amp; Threads</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/resources" class="active"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/resources" class="active"><span>Resources</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Resources submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/resources/faq">FAQ</a></li>
     <li><a href="/website-staging/resources/new-patients" class="active">New Patients</a></li>
@@ -225,7 +227,7 @@
 </li>
           <li><a href="/website-staging/contact">Contact</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-lg-none bi bi-list"></i>
+        <button type="button" class="mobile-nav-toggle d-lg-none" aria-label="Open menu" aria-expanded="false" aria-controls="navmenu-list"><i class="bi bi-list" aria-hidden="true"></i></button>
       </nav>
 
       <a class="btn-getstarted" href="/website-staging/request-appointment">Request Appointment</a>
@@ -234,11 +236,11 @@
   </header>
 
 
-  <main class="main">
+  <main id="main" class="main" tabindex="-1">
 
     <!-- Page Title -->
     <div class="page-title">
-      <nav class="breadcrumbs">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
         <div class="container">
           <ol>
             <li><a href="/website-staging/">Home</a></li>
@@ -264,28 +266,28 @@
           </div>
 
           <div class="service-highlights">
-            <h3>Your First Visit: A Comprehensive New Patient Exam</h3>
+            <h2>Your First Visit: A Comprehensive New Patient Exam</h2>
             <p>For all new patients, we begin with a comprehensive dental exam to evaluate your overall oral health and determine the best treatment plan for your needs.</p>
             <div class="highlights-grid">
               <div class="highlight-card">
                 <div class="highlight-icon">
                   <i class="bi bi-search-heart" aria-hidden="true"></i>
                 </div>
-                <h4>Comprehensive Exam</h4>
+                <h3>Comprehensive Exam</h3>
                 <p>We evaluate your overall oral health and determine the best treatment plan for your needs.</p>
               </div>
               <div class="highlight-card">
                 <div class="highlight-icon">
                   <i class="bi bi-camera" aria-hidden="true"></i>
                 </div>
-                <h4>Updated X-Rays</h4>
+                <h3>Updated X-Rays</h3>
                 <p>Updated dental X-rays may be taken during this visit if needed.</p>
               </div>
               <div class="highlight-card">
                 <div class="highlight-icon">
                   <i class="bi bi-rulers" aria-hidden="true"></i>
                 </div>
-                <h4>Gum Measurements</h4>
+                <h3>Gum Measurements</h3>
                 <p>Specific gum measurements are recorded to assess your gum health and determine which type of cleaning is most appropriate for you, whether a routine preventive cleaning or a more specialized periodontal cleaning.</p>
               </div>
             </div>
@@ -328,7 +330,7 @@
       <div class="row gy-4">
         <div class="col-lg-8">
           <div class="details-content">
-            <h3>Getting Started</h3>
+            <h2>Getting Started</h2>
             <p>When you <a href="tel:+13128421018">call to schedule</a> your first visit, we'll ask for the following information:</p>
 
             <div class="care-features">
@@ -354,7 +356,7 @@
               </div>
             </div>
 
-            <h3 class="mt-5">Before Your Appointment</h3>
+            <h2 class="mt-5">Before Your Appointment</h2>
             <p>To help ensure a smooth and efficient visit, we kindly ask that all dental X-rays and any additional provided forms be emailed to our office at <a href="mailto:anissaanastdmd@gmail.com">anissaanastdmd@gmail.com</a> before your scheduled appointment.</p>
             <p>Have questions about your coverage? We accept all PPO dental insurances. Visit our <a href="/website-staging/resources/insurance">Insurance</a> page to learn more.</p>
           </div>
@@ -363,7 +365,7 @@
         <div class="col-lg-4">
           <div class="info-sidebar">
             <div class="info-card">
-              <h4>Contact Our Office</h4>
+              <h3>Contact Our Office</h3>
               <div class="hours-list">
                 <div class="hours-item">
                   <span>Phone</span>
@@ -381,7 +383,7 @@
             </div>
 
             <div class="info-card">
-              <h4>Helpful Links</h4>
+              <h3>Helpful Links</h3>
               <div class="quick-links">
                 <a href="/website-staging/resources/faq">
                   <i class="bi bi-arrow-right" aria-hidden="true"></i>
@@ -571,6 +573,11 @@
       </div>
       <div class="swiper-pagination"></div>
     </div>
+    <div class="reviews-controls">
+      <button type="button" class="reviews-autoplay-toggle" data-autoplay-toggle aria-pressed="false">
+        <i class="bi bi-pause-fill" aria-hidden="true"></i><span>Pause reviews</span>
+      </button>
+    </div>
 
   </div>
 
@@ -586,16 +593,16 @@
       <div class="banner-content">
         <div class="contact-info">
           <div class="contact-icon">
-            <i class="fas fa-phone"></i>
+            <i class="fas fa-phone" aria-hidden="true"></i>
           </div>
           <div class="contact-text">
-            <h5>Ready for Your First Visit?</h5>
+            <h2>Ready for Your First Visit?</h2>
             <p>Give us a call and our front desk will help you find a time that works.</p>
           </div>
         </div>
         <div class="contact-actions">
           <a href="tel:+13128421018" class="call-btn">
-            <i class="fas fa-phone"></i>
+            <i class="fas fa-phone" aria-hidden="true"></i>
             (312) 842-1018
           </a>
           <a href="/website-staging/request-appointment" class="contact-link">Request Appointment</a>
@@ -630,7 +637,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Quick Links</h4>
+          <h2>Quick Links</h2>
           <ul>
             <li><a href="/website-staging/">Home</a></li>
             <li><a href="/website-staging/about">About</a></li>
@@ -642,7 +649,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>About</h4>
+          <h2>About</h2>
           <ul>
             <li><a href="/website-staging/about">Our Story</a></li>
             <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
@@ -650,7 +657,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Services</h4>
+          <h2>Services</h2>
           <ul>
             <li><a href="/website-staging/services/general-dentistry">General Dentistry</a></li>
             <li><a href="/website-staging/services/restorative-dentistry">Restorative Dentistry</a></li>
@@ -660,7 +667,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Resources</h4>
+          <h2>Resources</h2>
           <ul>
             <li><a href="/website-staging/resources/faq">FAQ</a></li>
             <li><a href="/website-staging/resources/new-patients">New Patients</a></li>

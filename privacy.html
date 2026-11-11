@@ -191,6 +191,8 @@
 
 <body class="privacy-page">
 
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
@@ -198,16 +200,16 @@
         <img src="/website-staging/assets/img/logo.png" alt="Anissa Anast Dental Office">
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
+      <nav id="navmenu" class="navmenu" aria-label="Main">
+        <ul id="navmenu-list">
           <li><a href="/website-staging/">Home</a></li>
-          <li class="dropdown"><a href="/website-staging/about"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/about"><span>About</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="About submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/about">Our Story</a></li>
     <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/services"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/services"><span>Services</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Services submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/services/general-dentistry">General Dentistry</a></li>
     <li><a href="/website-staging/services/restorative-dentistry">Restorative Dentistry</a></li>
@@ -215,7 +217,7 @@
     <li><a href="/website-staging/services/injectables-and-threads">Injectables &amp; Threads</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/resources"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/resources"><span>Resources</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Resources submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/resources/faq">FAQ</a></li>
     <li><a href="/website-staging/resources/new-patients">New Patients</a></li>
@@ -224,7 +226,7 @@
 </li>
           <li><a href="/website-staging/contact">Contact</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-lg-none bi bi-list"></i>
+        <button type="button" class="mobile-nav-toggle d-lg-none" aria-label="Open menu" aria-expanded="false" aria-controls="navmenu-list"><i class="bi bi-list" aria-hidden="true"></i></button>
       </nav>
 
       <a class="btn-getstarted" href="/website-staging/request-appointment">Request Appointment</a>
@@ -233,12 +235,12 @@
   </header>
 
 
-  <main class="main">
+  <main id="main" class="main" tabindex="-1">
 
     <!-- Page Title -->
     <div class="page-title">
       <h1 class="visually-hidden">Privacy Policy</h1>
-      <nav class="breadcrumbs">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
         <div class="container">
           <ol>
             <li><a href="/website-staging/">Home</a></li>
@@ -265,32 +267,32 @@
             <p>Anissa Anast Dental Office ("we," "us," or "our") respects your privacy. This Privacy Policy explains how we collect, use, and protect information when you visit anissaanastdmd.github.io (the "Website"). It applies only to information collected through this Website.</p>
 
             <div class="info-box">
-              <h4>About Your Health Information</h4>
+              <h2>About Your Health Information</h2>
               <p class="mb-0">How we use and protect the health information in your dental records is described in our separate <strong>Notice of Privacy Practices</strong>, as required by the Health Insurance Portability and Accountability Act (HIPAA). A copy is available at our office or by request.</p>
             </div>
           </div>
 
           <div class="privacy-section">
-            <h3>Information We Collect</h3>
+            <h2>Information We Collect</h2>
             <p>We collect only the information you choose to give us, along with limited technical information that is collected automatically when you use the Website.</p>
 
-            <h4>Information You Provide</h4>
+            <h3>Information You Provide</h3>
             <p>When you use our contact form, we may collect:</p>
             <ul>
               <li>Your name, email address, and phone number</li>
               <li>Any details you include in your message</li>
             </ul>
 
-            <h4>Information Collected Automatically</h4>
+            <h3>Information Collected Automatically</h3>
             <p>Like most websites, our hosting provider may automatically record basic technical information such as your IP address, browser type, device type, and the pages you visit. This information is used to keep the Website secure and working properly.</p>
           </div>
 
           <div class="privacy-section">
-            <h3>How We Use Your Information</h3>
+            <h2>How We Use Your Information</h2>
             <p>We use the information you provide to respond to you and to provide our services.</p>
 
             <div class="info-box">
-              <h4>We Use Your Information To</h4>
+              <h3>We Use Your Information To</h3>
               <ol>
                 <li>Respond to your questions and messages</li>
                 <li>Schedule and confirm appointments</li>
@@ -301,23 +303,23 @@
           </div>
 
           <div class="privacy-section">
-            <h3>Information Sharing and Disclosure</h3>
+            <h2>Information Sharing and Disclosure</h2>
             <p>We share information only as needed to operate the Website and respond to your requests, or when required by law. For example, our website contact form is processed by a third-party form service that delivers your submission to our office, and our office location map is provided by Google Maps.</p>
 
             <div class="highlight-box">
               <i class="bi bi-shield-check" aria-hidden="true"></i>
-              <h4>We Never Sell Your Information</h4>
+              <h3>We Never Sell Your Information</h3>
               <p>We do not sell, rent, or trade your personal information to anyone.</p>
             </div>
           </div>
 
           <div class="privacy-section">
-            <h3>Please Don't Send Sensitive Health Information</h3>
+            <h2>Please Don't Send Sensitive Health Information</h2>
             <p>Our website forms and email are not intended for sharing detailed medical or dental information. Please don't include sensitive health details, Social Security numbers, or payment information in a website form or email. Call our office instead, and we'll be glad to help.</p>
           </div>
 
           <div class="privacy-section">
-            <h3>Data Security</h3>
+            <h2>Data Security</h2>
             <p>We take reasonable steps to protect the information you share with us. However, no method of transmitting or storing information online is completely secure, and we cannot guarantee absolute security.</p>
 
             <div class="security-measures">
@@ -325,14 +327,14 @@
                 <div class="col-md-6">
                   <div class="measure-item">
                     <i class="bi bi-lock-fill" aria-hidden="true"></i>
-                    <h5>Encrypted Connection</h5>
+                    <h3>Encrypted Connection</h3>
                     <p>The Website is served over HTTPS, which encrypts information sent between your browser and the Website.</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="measure-item">
                     <i class="bi bi-person-lock" aria-hidden="true"></i>
-                    <h5>Limited Access</h5>
+                    <h3>Limited Access</h3>
                     <p>Only authorized members of our team use the information you submit, and only to respond to your request.</p>
                   </div>
                 </div>
@@ -341,28 +343,28 @@
           </div>
 
           <div class="privacy-section">
-            <h3>Your Choices</h3>
+            <h2>Your Choices</h2>
             <p>You can contact us at any time with questions about the information you've shared through the Website.</p>
 
             <div class="rights-list">
               <div class="right-item">
                 <i class="bi bi-eye" aria-hidden="true"></i>
                 <div>
-                  <h5>Access</h5>
+                  <h3>Access</h3>
                   <p>Ask what information you've submitted to us through the Website.</p>
                 </div>
               </div>
               <div class="right-item">
                 <i class="bi bi-pencil" aria-hidden="true"></i>
                 <div>
-                  <h5>Correction</h5>
+                  <h3>Correction</h3>
                   <p>Ask us to update or correct your contact information.</p>
                 </div>
               </div>
               <div class="right-item">
                 <i class="bi bi-trash" aria-hidden="true"></i>
                 <div>
-                  <h5>Deletion</h5>
+                  <h3>Deletion</h3>
                   <p>Ask us to delete website form submissions, subject to any records we are required to keep.</p>
                 </div>
               </div>
@@ -370,11 +372,11 @@
           </div>
 
           <div class="privacy-section">
-            <h3>Cookies and Third-Party Services</h3>
+            <h2>Cookies and Third-Party Services</h2>
             <p>The Website does not use advertising or tracking cookies. Some third-party services embedded on the Website, such as Google Maps, may set their own cookies or collect information according to their own privacy policies.</p>
 
             <div class="cookie-types">
-              <h4>Third-Party Services We Use</h4>
+              <h3>Third-Party Services We Use</h3>
               <div class="table-responsive">
                 <table class="table">
                   <thead>
@@ -407,17 +409,17 @@
           </div>
 
           <div class="privacy-section">
-            <h3>Children's Privacy</h3>
+            <h2>Children's Privacy</h2>
             <p>The Website is not directed to children under 13, and we do not knowingly collect personal information from children through the Website. Parents or guardians should contact our office directly to schedule care for a child.</p>
           </div>
 
           <div class="privacy-section">
-            <h3>Changes to This Privacy Policy</h3>
+            <h2>Changes to This Privacy Policy</h2>
             <p>We may update this Privacy Policy from time to time. When we do, we'll revise the "Last updated" date at the top of this page.</p>
           </div>
 
           <div class="contact-section">
-            <h3>Contact Us</h3>
+            <h2>Contact Us</h2>
             <p>If you have questions about this Privacy Policy, please contact our office.</p>
 
             <div class="contact-info">
@@ -467,7 +469,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Quick Links</h4>
+          <h2>Quick Links</h2>
           <ul>
             <li><a href="/website-staging/">Home</a></li>
             <li><a href="/website-staging/about">About</a></li>
@@ -479,7 +481,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>About</h4>
+          <h2>About</h2>
           <ul>
             <li><a href="/website-staging/about">Our Story</a></li>
             <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
@@ -487,7 +489,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Services</h4>
+          <h2>Services</h2>
           <ul>
             <li><a href="/website-staging/services/general-dentistry">General Dentistry</a></li>
             <li><a href="/website-staging/services/restorative-dentistry">Restorative Dentistry</a></li>
@@ -497,7 +499,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Resources</h4>
+          <h2>Resources</h2>
           <ul>
             <li><a href="/website-staging/resources/faq">FAQ</a></li>
             <li><a href="/website-staging/resources/new-patients">New Patients</a></li>

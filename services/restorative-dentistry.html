@@ -202,6 +202,8 @@
 
 <body class="service-details-page">
 
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
@@ -209,16 +211,16 @@
         <img src="/website-staging/assets/img/logo.png" alt="Anissa Anast Dental Office">
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
+      <nav id="navmenu" class="navmenu" aria-label="Main">
+        <ul id="navmenu-list">
           <li><a href="/website-staging/">Home</a></li>
-          <li class="dropdown"><a href="/website-staging/about"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/about"><span>About</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="About submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/about">Our Story</a></li>
     <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/services" class="active"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/services" class="active"><span>Services</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Services submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/services/general-dentistry">General Dentistry</a></li>
     <li><a href="/website-staging/services/restorative-dentistry" class="active">Restorative Dentistry</a></li>
@@ -226,7 +228,7 @@
     <li><a href="/website-staging/services/injectables-and-threads">Injectables &amp; Threads</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/resources"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/resources"><span>Resources</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Resources submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/resources/faq">FAQ</a></li>
     <li><a href="/website-staging/resources/new-patients">New Patients</a></li>
@@ -235,7 +237,7 @@
 </li>
           <li><a href="/website-staging/contact">Contact</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-lg-none bi bi-list"></i>
+        <button type="button" class="mobile-nav-toggle d-lg-none" aria-label="Open menu" aria-expanded="false" aria-controls="navmenu-list"><i class="bi bi-list" aria-hidden="true"></i></button>
       </nav>
 
       <a class="btn-getstarted" href="/website-staging/request-appointment">Request Appointment</a>
@@ -244,11 +246,11 @@
   </header>
 
 
-  <main class="main">
+  <main id="main" class="main" tabindex="-1">
 
     <!-- Page Title -->
     <div class="page-title">
-      <nav class="breadcrumbs">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
         <div class="container">
           <ol>
             <li><a href="/website-staging/">Home</a></li>
@@ -283,7 +285,7 @@
           <p>We'll walk you through your options, explain what each treatment involves, and help you choose the approach that fits your needs. When a case calls for specialized care, we'll refer you to a trusted specialist.</p>
 
           <div class="service-features">
-            <h4>Our Restorative Dentistry Services Include:</h4>
+            <h2>Our Restorative Dentistry Services Include:</h2>
             <ul>
               <li><i class="bi bi-check-circle" aria-hidden="true"></i> Dental emergencies</li>
               <li><i class="bi bi-check-circle" aria-hidden="true"></i> Fillings &amp; crowns</li>
@@ -304,7 +306,7 @@
     </div>
     <div class="treatment-group">
       <div class="treatment-group-header">
-        <h3>Emergency Care</h3>
+        <h2>Emergency Care</h2>
         <p>Unexpected dental problems can't always wait. Call our office and we'll help as promptly as possible.</p>
       </div>
       <div class="row gy-4">
@@ -313,7 +315,7 @@
             <div class="card-icon">
               <i class="bi bi-exclamation-circle" aria-hidden="true"></i>
             </div>
-            <h4>Dental Emergencies</h4>
+            <h3>Dental Emergencies</h3>
             <p>Experiencing a toothache, dental pain, swelling, a broken tooth, or another unexpected dental concern? Our office can evaluate your symptoms and help determine the appropriate treatment. We aim to address urgent dental concerns as promptly as possible and help relieve discomfort while protecting your oral health.</p>
           </div>
         </div>
@@ -322,7 +324,7 @@
             <div class="card-icon">
               <i class="bi bi-clipboard2-pulse" aria-hidden="true"></i>
             </div>
-            <h4>Tooth Extractions</h4>
+            <h3>Tooth Extractions</h3>
             <p>When a tooth is severely damaged, decayed, infected, or cannot be saved, an extraction may be recommended. We evaluate each tooth carefully and discuss your treatment options, including ways to restore or replace the tooth when appropriate.</p>
           </div>
         </div>
@@ -330,7 +332,7 @@
     </div>
     <div class="treatment-group">
       <div class="treatment-group-header">
-        <h3>Repairing Teeth</h3>
+        <h2>Repairing Teeth</h2>
         <p>Treatments that repair damage and decay so you can keep your natural teeth.</p>
       </div>
       <div class="row gy-4">
@@ -339,7 +341,7 @@
             <div class="card-icon">
               <i class="bi bi-bandaid" aria-hidden="true"></i>
             </div>
-            <h4>Fillings</h4>
+            <h3>Fillings</h3>
             <p>Tooth-colored fillings repair cavities and minor damage while blending naturally with your smile.</p>
           </div>
         </div>
@@ -348,7 +350,7 @@
             <div class="card-icon">
               <i class="bi bi-gem" aria-hidden="true"></i>
             </div>
-            <h4>Dental Crowns</h4>
+            <h3>Dental Crowns</h3>
             <p>We offer a variety of dental crown options to meet your needs and preferences. From natural, tooth-colored crowns that blend seamlessly with your smile to classic gold crowns and even unique colors and designs, we can help you choose a crown that reflects your style. Whether you prefer a natural look or something more distinctive, our team is here to help you find the right option for your smile!</p>
           </div>
         </div>
@@ -357,7 +359,7 @@
             <div class="card-icon">
               <i class="bi bi-heart-pulse" aria-hidden="true"></i>
             </div>
-            <h4>Root Canal Treatment</h4>
+            <h3>Root Canal Treatment</h3>
             <p>Our office provides root canal treatment for anterior (front) teeth. Root canals involving back teeth, such as premolars and molars, or cases that are more complex may require specialized care and will be referred to an endodontist (root canal specialist). Our priority is to ensure you receive the appropriate treatment for your specific needs and the best possible care.</p>
           </div>
         </div>
@@ -365,7 +367,7 @@
     </div>
     <div class="treatment-group">
       <div class="treatment-group-header">
-        <h3>Replacing Missing Teeth</h3>
+        <h2>Replacing Missing Teeth</h2>
         <p>Options to restore your smile, chewing ability, and everyday comfort.</p>
       </div>
       <div class="row gy-4">
@@ -374,7 +376,7 @@
             <div class="card-icon">
               <i class="bi bi-link-45deg" aria-hidden="true"></i>
             </div>
-            <h4>Dental Bridges</h4>
+            <h3>Dental Bridges</h3>
             <p>A dental bridge replaces one or more missing teeth by anchoring an artificial tooth to supporting teeth or restorations. Bridges help restore your smile, improve chewing function, and maintain the appearance of your natural teeth.</p>
           </div>
         </div>
@@ -383,7 +385,7 @@
             <div class="card-icon">
               <i class="bi bi-emoji-smile" aria-hidden="true"></i>
             </div>
-            <h4>Dentures &amp; Partial Dentures</h4>
+            <h3>Dentures &amp; Partial Dentures</h3>
             <p>Dentures and partial dentures replace missing teeth to help restore your smile, improve chewing ability, and support everyday speech. Whether you need to replace several teeth or an entire arch, we can discuss options designed to meet your needs and improve comfort and function.</p>
           </div>
         </div>
@@ -392,7 +394,7 @@
             <div class="card-icon">
               <i class="bi bi-layers" aria-hidden="true"></i>
             </div>
-            <h4>Dental Implant Restorations</h4>
+            <h3>Dental Implant Restorations</h3>
             <p>Dental implants can support custom crowns or other restorations designed to replace missing teeth. We provide implant restoration services to help complete your smile with a natural-looking replacement that supports comfortable chewing and everyday function. Implant placement and restoration may be provided by different dental professionals.</p>
           </div>
         </div>
@@ -403,7 +405,7 @@
 
       <div class="col-lg-8">
         <div class="booking-section">
-          <h3>Ready to Schedule Your Visit?</h3>
+          <h2>Ready to Schedule Your Visit?</h2>
           <p>Give us a call to schedule your visit. We're happy to answer questions about restorative dentistry and help you explore your treatment options.</p>
 
           <div class="availability-info">
@@ -434,7 +436,7 @@
 
       <div class="col-lg-4">
         <div class="appointment-card">
-          <h4>Book Your Visit</h4>
+          <h2>Book Your Visit</h2>
           <p>Give us a call and we'll find a time that works for you.</p>
           <a href="/website-staging/request-appointment" class="btn-appointment">Request Appointment</a>
           <div class="contact-alternative">
@@ -470,7 +472,7 @@
             <span class="service-category">Preventive</span>
           </div>
           <div class="service-body">
-            <h4>General Dentistry</h4>
+            <h3>General Dentistry</h3>
             <p>Regular examinations, cleanings, and gum care help maintain oral health and identify concerns early, with personalized oral hygiene education for patients of all ages.</p>
             <div class="service-features">
               <span class="feature-badge">Dental exams &amp; cleanings</span>
@@ -498,7 +500,7 @@
             <span class="service-category">Cosmetic</span>
           </div>
           <div class="service-body">
-            <h4>Cosmetic Dentistry</h4>
+            <h3>Cosmetic Dentistry</h3>
             <p>Cosmetic options designed to enhance the appearance of your teeth and overall smile, with consultations to help you choose what's right for you.</p>
             <div class="service-features">
               <span class="feature-badge">Clear aligners</span>
@@ -524,7 +526,7 @@
             <span class="service-category">Aesthetic</span>
           </div>
           <div class="service-body">
-            <h4>Injectables &amp; Threads</h4>
+            <h3>Injectables &amp; Threads</h3>
             <p>Enhancing smiles and facial esthetics with Dr. Anast, a member of the American Academy of Facial Esthetics (AAFE). Botox may also help with therapeutic concerns such as jaw muscle tension.</p>
             <div class="service-features">
               <span class="feature-badge">Botox</span>
@@ -568,7 +570,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Quick Links</h4>
+          <h2>Quick Links</h2>
           <ul>
             <li><a href="/website-staging/">Home</a></li>
             <li><a href="/website-staging/about">About</a></li>
@@ -580,7 +582,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>About</h4>
+          <h2>About</h2>
           <ul>
             <li><a href="/website-staging/about">Our Story</a></li>
             <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
@@ -588,7 +590,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Services</h4>
+          <h2>Services</h2>
           <ul>
             <li><a href="/website-staging/services/general-dentistry">General Dentistry</a></li>
             <li><a href="/website-staging/services/restorative-dentistry">Restorative Dentistry</a></li>
@@ -598,7 +600,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Resources</h4>
+          <h2>Resources</h2>
           <ul>
             <li><a href="/website-staging/resources/faq">FAQ</a></li>
             <li><a href="/website-staging/resources/new-patients">New Patients</a></li>

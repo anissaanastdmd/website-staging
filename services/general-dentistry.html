@@ -202,6 +202,8 @@
 
 <body class="service-details-page">
 
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
@@ -209,16 +211,16 @@
         <img src="/website-staging/assets/img/logo.png" alt="Anissa Anast Dental Office">
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
+      <nav id="navmenu" class="navmenu" aria-label="Main">
+        <ul id="navmenu-list">
           <li><a href="/website-staging/">Home</a></li>
-          <li class="dropdown"><a href="/website-staging/about"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/about"><span>About</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="About submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/about">Our Story</a></li>
     <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/services" class="active"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/services" class="active"><span>Services</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Services submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/services/general-dentistry" class="active">General Dentistry</a></li>
     <li><a href="/website-staging/services/restorative-dentistry">Restorative Dentistry</a></li>
@@ -226,7 +228,7 @@
     <li><a href="/website-staging/services/injectables-and-threads">Injectables &amp; Threads</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/resources"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/resources"><span>Resources</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Resources submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/resources/faq">FAQ</a></li>
     <li><a href="/website-staging/resources/new-patients">New Patients</a></li>
@@ -235,7 +237,7 @@
 </li>
           <li><a href="/website-staging/contact">Contact</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-lg-none bi bi-list"></i>
+        <button type="button" class="mobile-nav-toggle d-lg-none" aria-label="Open menu" aria-expanded="false" aria-controls="navmenu-list"><i class="bi bi-list" aria-hidden="true"></i></button>
       </nav>
 
       <a class="btn-getstarted" href="/website-staging/request-appointment">Request Appointment</a>
@@ -244,11 +246,11 @@
   </header>
 
 
-  <main class="main">
+  <main id="main" class="main" tabindex="-1">
 
     <!-- Page Title -->
     <div class="page-title">
-      <nav class="breadcrumbs">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
         <div class="container">
           <ol>
             <li><a href="/website-staging/">Home</a></li>
@@ -283,7 +285,7 @@
           <p>From routine cleanings to treatment for gum disease, we recommend the type of cleaning that's right for your teeth and gums, and our hygienists share practical, personalized tips for caring for your smile at home.</p>
 
           <div class="service-features">
-            <h4>Our General Dentistry Services Include:</h4>
+            <h2>Our General Dentistry Services Include:</h2>
             <ul>
               <li><i class="bi bi-check-circle" aria-hidden="true"></i> Dental exams &amp; cleanings</li>
               <li><i class="bi bi-check-circle" aria-hidden="true"></i> Gum disease treatment &amp; periodontal care</li>
@@ -303,7 +305,7 @@
     </div>
     <div class="treatment-group">
       <div class="treatment-group-header">
-        <h3>Cleanings & Gum Care</h3>
+        <h2>Cleanings & Gum Care</h2>
         <p>Healthy gums are essential to a healthy smile. We offer a full range of cleanings, from routine preventive care to specialized treatment for gum disease.</p>
       </div>
       <div class="row gy-4">
@@ -312,7 +314,7 @@
             <div class="card-icon">
               <i class="bi bi-stars" aria-hidden="true"></i>
             </div>
-            <h4>Regular Dental Cleanings</h4>
+            <h3>Regular Dental Cleanings</h3>
             <p>Routine dental cleanings help remove plaque, tartar, and surface buildup that brushing and flossing alone may not eliminate. Regular cleanings help maintain healthy teeth and gums, prevent oral health problems, and keep your smile feeling fresh.</p>
           </div>
         </div>
@@ -321,7 +323,7 @@
             <div class="card-icon">
               <i class="bi bi-droplet" aria-hidden="true"></i>
             </div>
-            <h4>Gingivitis Treatment</h4>
+            <h3>Gingivitis Treatment</h3>
             <p>Gingivitis is the precursor of gum disease that can cause redness, swelling, and bleeding gums. With professional dental cleanings, improved home care, and personalized guidance, gingivitis can often be reversed before it progresses to more advanced gum disease.</p>
           </div>
         </div>
@@ -330,7 +332,7 @@
             <div class="card-icon">
               <i class="bi bi-layers-half" aria-hidden="true"></i>
             </div>
-            <h4>Deep Cleanings (Scaling and Root Planing)</h4>
+            <h3>Deep Cleanings (Scaling and Root Planing)</h3>
             <p>Deep cleanings treat gum disease by removing plaque and tartar from below the gumline and smoothing the tooth roots to help the gums heal. This treatment helps reduce inflammation and gum pocket depth and helps prevent further damage to the supporting structures of your teeth.</p>
           </div>
         </div>
@@ -339,7 +341,7 @@
             <div class="card-icon">
               <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
             </div>
-            <h4>Periodontal Maintenance</h4>
+            <h3>Periodontal Maintenance</h3>
             <p>After treatment for gum disease, periodontal maintenance helps keep your gums healthy and prevent the condition from progressing. These specialized cleanings focus on areas affected by gum disease and are typically scheduled more frequently than routine cleanings, based on your individual needs.</p>
           </div>
         </div>
@@ -348,7 +350,7 @@
             <div class="card-icon">
               <i class="bi bi-lightning-charge" aria-hidden="true"></i>
             </div>
-            <h4>Periodontal Laser Treatments</h4>
+            <h3>Periodontal Laser Treatments</h3>
             <p>Laser-assisted periodontal treatments may be used as part of a gum disease treatment plan to target diseased or inflamed gum tissue and support periodontal care. Your dentist will determine whether laser treatment is appropriate for your condition and whether it should be combined with traditional periodontal therapy.</p>
           </div>
         </div>
@@ -357,7 +359,7 @@
             <div class="card-icon">
               <i class="bi bi-search-heart" aria-hidden="true"></i>
             </div>
-            <h4>Dental Exams &amp; X-Rays</h4>
+            <h3>Dental Exams &amp; X-Rays</h3>
             <p>Regular exams, with diagnostic X-rays when needed, let us check your teeth, gums, and mouth, spot concerns early, and plan any care you need.</p>
           </div>
         </div>
@@ -365,7 +367,7 @@
     </div>
     <div class="treatment-group">
       <div class="treatment-group-header">
-        <h3>Children's Dentistry</h3>
+        <h2>Children's Dentistry</h2>
         <p>We welcome children and adolescents and help them build healthy dental habits from an early age.</p>
       </div>
       <div class="row gy-4">
@@ -374,7 +376,7 @@
             <div class="card-icon">
               <i class="bi bi-emoji-smile" aria-hidden="true"></i>
             </div>
-            <h4>Children&#39;s Dentistry &amp; Adolescent Cleanings</h4>
+            <h3>Children&#39;s Dentistry &amp; Adolescent Cleanings</h3>
             <p>We welcome children and adolescents and help them build healthy dental habits from an early age. Age-appropriate cleanings, regular examinations, and diagnostic X-rays help monitor growing teeth, identify potential concerns, and keep developing smiles healthy.</p>
           </div>
         </div>
@@ -383,7 +385,7 @@
             <div class="card-icon">
               <i class="bi bi-shield-check" aria-hidden="true"></i>
             </div>
-            <h4>Dental Sealants</h4>
+            <h3>Dental Sealants</h3>
             <p>Dental sealants are thin protective coatings applied to the chewing surfaces of back teeth. They help seal out food particles and bacteria from the deep grooves where cavities commonly develop, especially in children and teenagers.</p>
           </div>
         </div>
@@ -392,7 +394,7 @@
             <div class="card-icon">
               <i class="bi bi-brush" aria-hidden="true"></i>
             </div>
-            <h4>Fluoride Varnish</h4>
+            <h3>Fluoride Varnish</h3>
             <p>Fluoride varnish is a protective coating applied to the teeth to strengthen enamel and help prevent cavities. It is especially beneficial for children who are still developing their brushing habits, though it may also be recommended for adults at increased risk of tooth decay.</p>
           </div>
         </div>
@@ -400,7 +402,7 @@
     </div>
     <div class="treatment-group">
       <div class="treatment-group-header">
-        <h3>Protective Appliances</h3>
+        <h2>Protective Appliances</h2>
         <p>Custom-fit appliances that protect your teeth and the results of your dental care.</p>
       </div>
       <div class="row gy-4">
@@ -409,7 +411,7 @@
             <div class="card-icon">
               <i class="bi bi-moon-stars" aria-hidden="true"></i>
             </div>
-            <h4>Night Guards</h4>
+            <h3>Night Guards</h3>
             <p>Custom night guards help protect your teeth from the effects of grinding and clenching during sleep. They can help reduce excessive wear on teeth and protect dental restorations while providing a comfortable, personalized fit.</p>
           </div>
         </div>
@@ -418,7 +420,7 @@
             <div class="card-icon">
               <i class="bi bi-align-center" aria-hidden="true"></i>
             </div>
-            <h4>Orthodontic Retainers</h4>
+            <h3>Orthodontic Retainers</h3>
             <p>Retainers help maintain your teeth's alignment after orthodontic treatment. Wearing your retainer as directed helps prevent teeth from gradually shifting and protects the results of your orthodontic care.</p>
           </div>
         </div>
@@ -429,7 +431,7 @@
 
       <div class="col-lg-8">
         <div class="booking-section">
-          <h3>Ready to Schedule Your Visit?</h3>
+          <h2>Ready to Schedule Your Visit?</h2>
           <p>Give us a call to schedule your visit. We're happy to answer questions about general dentistry and help you explore your treatment options.</p>
 
           <div class="availability-info">
@@ -460,7 +462,7 @@
 
       <div class="col-lg-4">
         <div class="appointment-card">
-          <h4>Book Your Visit</h4>
+          <h2>Book Your Visit</h2>
           <p>Give us a call and we'll find a time that works for you.</p>
           <a href="/website-staging/request-appointment" class="btn-appointment">Request Appointment</a>
           <div class="contact-alternative">
@@ -496,7 +498,7 @@
             <span class="service-category">Restorative</span>
           </div>
           <div class="service-body">
-            <h4>Restorative Dentistry</h4>
+            <h3>Restorative Dentistry</h3>
             <p>Treatments that restore the shape, strength, appearance, and function of teeth affected by decay or damage, options to replace missing teeth, and prompt care for dental emergencies.</p>
             <div class="service-features">
               <span class="feature-badge">Dental emergencies</span>
@@ -525,7 +527,7 @@
             <span class="service-category">Cosmetic</span>
           </div>
           <div class="service-body">
-            <h4>Cosmetic Dentistry</h4>
+            <h3>Cosmetic Dentistry</h3>
             <p>Cosmetic options designed to enhance the appearance of your teeth and overall smile, with consultations to help you choose what's right for you.</p>
             <div class="service-features">
               <span class="feature-badge">Clear aligners</span>
@@ -551,7 +553,7 @@
             <span class="service-category">Aesthetic</span>
           </div>
           <div class="service-body">
-            <h4>Injectables &amp; Threads</h4>
+            <h3>Injectables &amp; Threads</h3>
             <p>Enhancing smiles and facial esthetics with Dr. Anast, a member of the American Academy of Facial Esthetics (AAFE). Botox may also help with therapeutic concerns such as jaw muscle tension.</p>
             <div class="service-features">
               <span class="feature-badge">Botox</span>
@@ -595,7 +597,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Quick Links</h4>
+          <h2>Quick Links</h2>
           <ul>
             <li><a href="/website-staging/">Home</a></li>
             <li><a href="/website-staging/about">About</a></li>
@@ -607,7 +609,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>About</h4>
+          <h2>About</h2>
           <ul>
             <li><a href="/website-staging/about">Our Story</a></li>
             <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
@@ -615,7 +617,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Services</h4>
+          <h2>Services</h2>
           <ul>
             <li><a href="/website-staging/services/general-dentistry">General Dentistry</a></li>
             <li><a href="/website-staging/services/restorative-dentistry">Restorative Dentistry</a></li>
@@ -625,7 +627,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Resources</h4>
+          <h2>Resources</h2>
           <ul>
             <li><a href="/website-staging/resources/faq">FAQ</a></li>
             <li><a href="/website-staging/resources/new-patients">New Patients</a></li>

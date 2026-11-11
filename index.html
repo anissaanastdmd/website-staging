@@ -182,6 +182,8 @@
 
 <body class="index-page">
 
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
@@ -189,16 +191,16 @@
         <img src="/website-staging/assets/img/logo.png" alt="Anissa Anast Dental Office">
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
+      <nav id="navmenu" class="navmenu" aria-label="Main">
+        <ul id="navmenu-list">
           <li><a href="/website-staging/" class="active">Home</a></li>
-          <li class="dropdown"><a href="/website-staging/about"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/about"><span>About</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="About submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/about">Our Story</a></li>
     <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/services"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/services"><span>Services</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Services submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/services/general-dentistry">General Dentistry</a></li>
     <li><a href="/website-staging/services/restorative-dentistry">Restorative Dentistry</a></li>
@@ -206,7 +208,7 @@
     <li><a href="/website-staging/services/injectables-and-threads">Injectables &amp; Threads</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/resources"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/resources"><span>Resources</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Resources submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/resources/faq">FAQ</a></li>
     <li><a href="/website-staging/resources/new-patients">New Patients</a></li>
@@ -215,7 +217,7 @@
 </li>
           <li><a href="/website-staging/contact">Contact</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-lg-none bi bi-list"></i>
+        <button type="button" class="mobile-nav-toggle d-lg-none" aria-label="Open menu" aria-expanded="false" aria-controls="navmenu-list"><i class="bi bi-list" aria-hidden="true"></i></button>
       </nav>
 
       <a class="btn-getstarted" href="/website-staging/request-appointment">Request Appointment</a>
@@ -224,7 +226,7 @@
   </header>
 
 
-  <main class="main">
+  <main id="main" class="main" tabindex="-1">
 
     
 
@@ -243,19 +245,19 @@
 
           <div class="hero-ctas">
             <a href="/website-staging/request-appointment" class="btn-hero btn-hero-primary">
-              <i class="bi bi-calendar-check"></i>
+              <i class="bi bi-calendar-check" aria-hidden="true"></i>
               Request Appointment
             </a>
             <a href="tel:+13128421018" class="btn-hero btn-hero-secondary">
-              <i class="bi bi-telephone"></i>
+              <i class="bi bi-telephone" aria-hidden="true"></i>
               Call (312) 842-1018
             </a>
           </div>
 
           <ul class="hero-highlights">
-            <li><i class="bi bi-check-circle-fill"></i> Preventive</li>
-            <li><i class="bi bi-check-circle-fill"></i> Restorative</li>
-            <li><i class="bi bi-check-circle-fill"></i> Cosmetic &amp; Injectables</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Preventive</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Restorative</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Cosmetic &amp; Injectables</li>
           </ul>
         </div>
       </div>
@@ -274,7 +276,7 @@
             alt="The Anissa Anast Dental Office team standing together in front of a brick wall"
             class="hero-photo">
           <div class="hero-badge-card">
-            <i class="bi bi-house-heart"></i>
+            <i class="bi bi-house-heart" aria-hidden="true"></i>
             <div>
               <strong>Since 1985</strong>
               <span>Caring for our community</span>
@@ -302,7 +304,7 @@
         <article class="service-group">
           <div class="service-group-header">
             <div class="service-group-icon">
-              <i class="fas fa-tooth"></i>
+              <i class="fas fa-tooth" aria-hidden="true"></i>
             </div>
             <div>
               <h3>General Dentistry</h3>
@@ -313,21 +315,21 @@
           <p class="service-group-summary">Regular examinations, cleanings, and gum care help maintain oral health and identify concerns early, with personalized oral hygiene education for patients of all ages.</p>
 
           <ul class="service-group-list">
-            <li><i class="bi bi-check-circle-fill"></i> Dental exams &amp; cleanings</li>
-            <li><i class="bi bi-check-circle-fill"></i> Gum disease treatment &amp; periodontal care</li>
-            <li><i class="bi bi-check-circle-fill"></i> Children&#39;s &amp; adolescent dentistry</li>
-            <li><i class="bi bi-check-circle-fill"></i> Sealants &amp; fluoride varnish</li>
-            <li><i class="bi bi-check-circle-fill"></i> Night guards &amp; retainers</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Dental exams &amp; cleanings</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Gum disease treatment &amp; periodontal care</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Children&#39;s &amp; adolescent dentistry</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Sealants &amp; fluoride varnish</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Night guards &amp; retainers</li>
           </ul>
 
-          <a href="/website-staging/services/general-dentistry" class="service-group-link">Explore General Dentistry <i class="bi bi-arrow-right"></i></a>
+          <a href="/website-staging/services/general-dentistry" class="service-group-link">Explore General Dentistry <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
         </article>
       </div>
       <div class="col-md-6">
         <article class="service-group">
           <div class="service-group-header">
             <div class="service-group-icon">
-              <i class="fas fa-crown"></i>
+              <i class="fas fa-crown" aria-hidden="true"></i>
             </div>
             <div>
               <h3>Restorative Dentistry</h3>
@@ -338,22 +340,22 @@
           <p class="service-group-summary">Treatments that restore the shape, strength, appearance, and function of teeth affected by decay or damage, options to replace missing teeth, and prompt care for dental emergencies.</p>
 
           <ul class="service-group-list">
-            <li><i class="bi bi-check-circle-fill"></i> Dental emergencies</li>
-            <li><i class="bi bi-check-circle-fill"></i> Fillings &amp; crowns</li>
-            <li><i class="bi bi-check-circle-fill"></i> Anterior root canals</li>
-            <li><i class="bi bi-check-circle-fill"></i> Tooth extractions</li>
-            <li><i class="bi bi-check-circle-fill"></i> Bridges, partial &amp; full dentures</li>
-            <li><i class="bi bi-check-circle-fill"></i> Implant restoration with custom crowns, bridges, or dentures</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Dental emergencies</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Fillings &amp; crowns</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Anterior root canals</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Tooth extractions</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Bridges, partial &amp; full dentures</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Implant restoration with custom crowns, bridges, or dentures</li>
           </ul>
 
-          <a href="/website-staging/services/restorative-dentistry" class="service-group-link">Explore Restorative Dentistry <i class="bi bi-arrow-right"></i></a>
+          <a href="/website-staging/services/restorative-dentistry" class="service-group-link">Explore Restorative Dentistry <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
         </article>
       </div>
       <div class="col-md-6">
         <article class="service-group">
           <div class="service-group-header">
             <div class="service-group-icon">
-              <i class="fas fa-wand-magic-sparkles"></i>
+              <i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i>
             </div>
             <div>
               <h3>Cosmetic Dentistry</h3>
@@ -364,19 +366,19 @@
           <p class="service-group-summary">Cosmetic options designed to enhance the appearance of your teeth and overall smile, with consultations to help you choose what's right for you.</p>
 
           <ul class="service-group-list">
-            <li><i class="bi bi-check-circle-fill"></i> Clear aligners</li>
-            <li><i class="bi bi-check-circle-fill"></i> Professional teeth whitening</li>
-            <li><i class="bi bi-check-circle-fill"></i> Veneers, including no-prep veneers</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Clear aligners</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Professional teeth whitening</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Veneers, including no-prep veneers</li>
           </ul>
 
-          <a href="/website-staging/services/cosmetic-dentistry" class="service-group-link">Explore Cosmetic Dentistry <i class="bi bi-arrow-right"></i></a>
+          <a href="/website-staging/services/cosmetic-dentistry" class="service-group-link">Explore Cosmetic Dentistry <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
         </article>
       </div>
       <div class="col-md-6">
         <article class="service-group">
           <div class="service-group-header">
             <div class="service-group-icon">
-              <i class="fas fa-syringe"></i>
+              <i class="fas fa-syringe" aria-hidden="true"></i>
             </div>
             <div>
               <h3>Injectables &amp; Threads</h3>
@@ -387,12 +389,12 @@
           <p class="service-group-summary">Enhancing smiles and facial esthetics with Dr. Anast, a member of the American Academy of Facial Esthetics (AAFE). Botox may also help with therapeutic concerns such as jaw muscle tension.</p>
 
           <ul class="service-group-list">
-            <li><i class="bi bi-check-circle-fill"></i> Botox</li>
-            <li><i class="bi bi-check-circle-fill"></i> Dermal fillers</li>
-            <li><i class="bi bi-check-circle-fill"></i> Jaw muscle tension relief</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Botox</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Dermal fillers</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Jaw muscle tension relief</li>
           </ul>
 
-          <a href="/website-staging/services/injectables-and-threads" class="service-group-link">Explore Injectables &amp; Threads <i class="bi bi-arrow-right"></i></a>
+          <a href="/website-staging/services/injectables-and-threads" class="service-group-link">Explore Injectables &amp; Threads <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
         </article>
       </div>
     </div>
@@ -404,11 +406,11 @@
       </div>
       <div class="services-cta-actions">
         <a href="/website-staging/request-appointment" class="btn-services btn-services-primary">
-          <i class="bi bi-calendar-check"></i>
+          <i class="bi bi-calendar-check" aria-hidden="true"></i>
           Request Appointment
         </a>
         <a href="tel:+13128421018" class="btn-services btn-services-secondary">
-          <i class="bi bi-telephone"></i>
+          <i class="bi bi-telephone" aria-hidden="true"></i>
           Call (312) 842-1018
         </a>
       </div>
@@ -579,6 +581,11 @@
       </div>
       <div class="swiper-pagination"></div>
     </div>
+    <div class="reviews-controls">
+      <button type="button" class="reviews-autoplay-toggle" data-autoplay-toggle aria-pressed="false">
+        <i class="bi bi-pause-fill" aria-hidden="true"></i><span>Pause reviews</span>
+      </button>
+    </div>
 
   </div>
 
@@ -617,7 +624,7 @@
               <a href="/website-staging/about" class="primary-btn">Read Our Story</a>
               <a href="/website-staging/about/our-staff" class="secondary-link">
                 <span>Meet Our Team</span>
-                <i class="fas fa-arrow-right"></i>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -695,8 +702,7 @@
             <img src="/website-staging/assets/img/resources/faq.webp" alt="Paper speech bubbles with question marks" loading="lazy" width="600" height="400">
           </div>
           <div class="resource-body">
-            <span class="resource-icon"><i class="bi bi-question-circle" aria-hidden="true"></i></span>
-            <h3>FAQ</h3>
+            <span class="resource-icon"><i class="bi bi-question-circle" aria-hidden="true"></i></span><h3>FAQ</h3>
             <p>Answers to common questions about visits, treatments, and how our office works.</p>
             <span class="resource-link">Read the FAQ <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
           </div>
@@ -708,8 +714,7 @@
             <img src="/website-staging/assets/img/resources/new-patients.webp" alt="Patient relaxing in the dental chair during an exam" loading="lazy" width="600" height="400">
           </div>
           <div class="resource-body">
-            <span class="resource-icon"><i class="bi bi-clipboard-heart" aria-hidden="true"></i></span>
-            <h3>New Patients</h3>
+            <span class="resource-icon"><i class="bi bi-clipboard-heart" aria-hidden="true"></i></span><h3>New Patients</h3>
             <p>What to expect at your first visit and how to get started with our practice.</p>
             <span class="resource-link">Get started <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
           </div>
@@ -721,8 +726,7 @@
             <img src="/website-staging/assets/img/resources/insurance.webp" alt="Reviewing insurance forms at a table" loading="lazy" width="600" height="400">
           </div>
           <div class="resource-body">
-            <span class="resource-icon"><i class="bi bi-shield-check" aria-hidden="true"></i></span>
-            <h3>Insurance</h3>
+            <span class="resource-icon"><i class="bi bi-shield-check" aria-hidden="true"></i></span><h3>Insurance</h3>
             <p>We accept all PPO dental insurances. Learn how in- and out-of-network benefits work with our office.</p>
             <span class="resource-link">View insurance info <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
           </div>
@@ -808,16 +812,16 @@
       <div class="banner-content">
         <div class="contact-info">
           <div class="contact-icon">
-            <i class="fas fa-phone"></i>
+            <i class="fas fa-phone" aria-hidden="true"></i>
           </div>
           <div class="contact-text">
-            <h5>Ready to Schedule a Visit?</h5>
+            <h2>Ready to Schedule a Visit?</h2>
             <p>Call our office to book an appointment, ask about a specific service, or explore your treatment options.</p>
           </div>
         </div>
         <div class="contact-actions">
           <a href="tel:+13128421018" class="call-btn">
-            <i class="fas fa-phone"></i>
+            <i class="fas fa-phone" aria-hidden="true"></i>
             (312) 842-1018
           </a>
           <a href="/website-staging/request-appointment" class="contact-link">Request Appointment</a>
@@ -852,7 +856,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Quick Links</h4>
+          <h2>Quick Links</h2>
           <ul>
             <li><a href="/website-staging/">Home</a></li>
             <li><a href="/website-staging/about">About</a></li>
@@ -864,7 +868,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>About</h4>
+          <h2>About</h2>
           <ul>
             <li><a href="/website-staging/about">Our Story</a></li>
             <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
@@ -872,7 +876,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Services</h4>
+          <h2>Services</h2>
           <ul>
             <li><a href="/website-staging/services/general-dentistry">General Dentistry</a></li>
             <li><a href="/website-staging/services/restorative-dentistry">Restorative Dentistry</a></li>
@@ -882,7 +886,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Resources</h4>
+          <h2>Resources</h2>
           <ul>
             <li><a href="/website-staging/resources/faq">FAQ</a></li>
             <li><a href="/website-staging/resources/new-patients">New Patients</a></li>

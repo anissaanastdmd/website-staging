@@ -191,6 +191,8 @@
 
 <body class="about-page">
 
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
@@ -198,16 +200,16 @@
         <img src="/website-staging/assets/img/logo.png" alt="Anissa Anast Dental Office">
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
+      <nav id="navmenu" class="navmenu" aria-label="Main">
+        <ul id="navmenu-list">
           <li><a href="/website-staging/">Home</a></li>
-          <li class="dropdown"><a href="/website-staging/about" class="active"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/about" class="active"><span>About</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="About submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/about" class="active">Our Story</a></li>
     <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/services"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/services"><span>Services</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Services submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/services/general-dentistry">General Dentistry</a></li>
     <li><a href="/website-staging/services/restorative-dentistry">Restorative Dentistry</a></li>
@@ -215,7 +217,7 @@
     <li><a href="/website-staging/services/injectables-and-threads">Injectables &amp; Threads</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/resources"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/resources"><span>Resources</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Resources submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/resources/faq">FAQ</a></li>
     <li><a href="/website-staging/resources/new-patients">New Patients</a></li>
@@ -224,7 +226,7 @@
 </li>
           <li><a href="/website-staging/contact">Contact</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-lg-none bi bi-list"></i>
+        <button type="button" class="mobile-nav-toggle d-lg-none" aria-label="Open menu" aria-expanded="false" aria-controls="navmenu-list"><i class="bi bi-list" aria-hidden="true"></i></button>
       </nav>
 
       <a class="btn-getstarted" href="/website-staging/request-appointment">Request Appointment</a>
@@ -233,11 +235,11 @@
   </header>
 
 
-  <main class="main">
+  <main id="main" class="main" tabindex="-1">
 
     <!-- Page Title -->
     <div class="page-title">
-      <nav class="breadcrumbs">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
         <div class="container">
           <ol>
             <li><a href="/website-staging/">Home</a></li>
@@ -277,7 +279,7 @@
 
         <div class="col-lg-5">
           <div class="stats-content">
-            <h3>A Practice Built on Relationships</h3>
+            <h2>A Practice Built on Relationships</h2>
             <p>Generations of families have trusted our office with their smiles. Today, we're enhancing smiles and facial esthetics with Dr. Anast, a member of the American Academy of Facial Esthetics (AAFE).</p>
 
             <div class="stats-list">
@@ -286,7 +288,7 @@
                   <span>1985</span>
                 </div>
                 <div class="stat-info">
-                  <h5>Serving Our Community</h5>
+                  <h3>Serving Our Community</h3>
                   <p>Founded by Dr. Vincent Arrigo</p>
                 </div>
               </div>
@@ -296,7 +298,7 @@
                   <span>2023</span>
                 </div>
                 <div class="stat-info">
-                  <h5>A New Chapter</h5>
+                  <h3>A New Chapter</h3>
                   <p>Dr. Anissa Anast became the practice owner</p>
                 </div>
               </div>
@@ -306,7 +308,7 @@
                   <span>14</span><span>+</span>
                 </div>
                 <div class="stat-info">
-                  <h5>Years in Dentistry</h5>
+                  <h3>Years in Dentistry</h3>
                   <p>Dr. Anast has practiced dentistry for 6 years, after 8 years as a dental assistant</p>
                 </div>
               </div>
@@ -323,7 +325,7 @@
             <div class="mission-icon">
               <i class="bi bi-heart" aria-hidden="true"></i>
             </div>
-            <h4>Compassionate Care</h4>
+            <h2>Compassionate Care</h2>
             <p>We take the time to listen, explain your options clearly, and provide thorough, high-quality care tailored to your needs.</p>
           </div>
         </div>
@@ -333,7 +335,7 @@
             <div class="mission-icon">
               <i class="bi bi-house-heart" aria-hidden="true"></i>
             </div>
-            <h4>Community Connection</h4>
+            <h2>Community Connection</h2>
             <p>We're a true neighborhood office. We value the long-standing relationships we've built with patients and families over the years.</p>
           </div>
         </div>
@@ -343,7 +345,7 @@
             <div class="mission-icon">
               <i class="bi bi-emoji-smile" aria-hidden="true"></i>
             </div>
-            <h4>Your Comfort First</h4>
+            <h2>Your Comfort First</h2>
             <p>From the front desk to the dental chair, our team works to help you feel relaxed, welcome, and confident in your smile.</p>
           </div>
         </div>
@@ -609,6 +611,11 @@
       </div>
       <div class="swiper-pagination"></div>
     </div>
+    <div class="reviews-controls">
+      <button type="button" class="reviews-autoplay-toggle" data-autoplay-toggle aria-pressed="false">
+        <i class="bi bi-pause-fill" aria-hidden="true"></i><span>Pause reviews</span>
+      </button>
+    </div>
 
   </div>
 
@@ -624,16 +631,16 @@
       <div class="banner-content">
         <div class="contact-info">
           <div class="contact-icon">
-            <i class="fas fa-phone"></i>
+            <i class="fas fa-phone" aria-hidden="true"></i>
           </div>
           <div class="contact-text">
-            <h5>Ready to Schedule a Visit?</h5>
+            <h2>Ready to Schedule a Visit?</h2>
             <p>Call our office to book an appointment, ask about a specific service, or explore your treatment options.</p>
           </div>
         </div>
         <div class="contact-actions">
           <a href="tel:+13128421018" class="call-btn">
-            <i class="fas fa-phone"></i>
+            <i class="fas fa-phone" aria-hidden="true"></i>
             (312) 842-1018
           </a>
           <a href="/website-staging/request-appointment" class="contact-link">Request Appointment</a>
@@ -668,7 +675,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Quick Links</h4>
+          <h2>Quick Links</h2>
           <ul>
             <li><a href="/website-staging/">Home</a></li>
             <li><a href="/website-staging/about">About</a></li>
@@ -680,7 +687,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>About</h4>
+          <h2>About</h2>
           <ul>
             <li><a href="/website-staging/about">Our Story</a></li>
             <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
@@ -688,7 +695,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Services</h4>
+          <h2>Services</h2>
           <ul>
             <li><a href="/website-staging/services/general-dentistry">General Dentistry</a></li>
             <li><a href="/website-staging/services/restorative-dentistry">Restorative Dentistry</a></li>
@@ -698,7 +705,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Resources</h4>
+          <h2>Resources</h2>
           <ul>
             <li><a href="/website-staging/resources/faq">FAQ</a></li>
             <li><a href="/website-staging/resources/new-patients">New Patients</a></li>

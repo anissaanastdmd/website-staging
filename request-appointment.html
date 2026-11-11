@@ -191,6 +191,8 @@
 
 <body class="appointment-page">
 
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
@@ -198,16 +200,16 @@
         <img src="/website-staging/assets/img/logo.png" alt="Anissa Anast Dental Office">
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
+      <nav id="navmenu" class="navmenu" aria-label="Main">
+        <ul id="navmenu-list">
           <li><a href="/website-staging/">Home</a></li>
-          <li class="dropdown"><a href="/website-staging/about"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/about"><span>About</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="About submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/about">Our Story</a></li>
     <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/services"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/services"><span>Services</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Services submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/services/general-dentistry">General Dentistry</a></li>
     <li><a href="/website-staging/services/restorative-dentistry">Restorative Dentistry</a></li>
@@ -215,7 +217,7 @@
     <li><a href="/website-staging/services/injectables-and-threads">Injectables &amp; Threads</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/resources"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/resources"><span>Resources</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Resources submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/resources/faq">FAQ</a></li>
     <li><a href="/website-staging/resources/new-patients">New Patients</a></li>
@@ -224,7 +226,7 @@
 </li>
           <li><a href="/website-staging/contact">Contact</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-lg-none bi bi-list"></i>
+        <button type="button" class="mobile-nav-toggle d-lg-none" aria-label="Open menu" aria-expanded="false" aria-controls="navmenu-list"><i class="bi bi-list" aria-hidden="true"></i></button>
       </nav>
 
       <a class="btn-getstarted" href="/website-staging/request-appointment">Request Appointment</a>
@@ -233,11 +235,11 @@
   </header>
 
 
-  <main class="main">
+  <main id="main" class="main" tabindex="-1">
 
     <!-- Page Title -->
     <div class="page-title">
-      <nav class="breadcrumbs">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
         <div class="container">
           <ol>
             <li><a href="/website-staging/">Home</a></li>
@@ -254,49 +256,8 @@
 
     <div class="row gy-4 align-items-center">
 
-      <!-- Appointment Info -->
-      <div class="col-lg-5">
-        <div class="appointment-info">
-          <h3>Schedule Your Visit</h3>
-          <p class="mb-4">The quickest way to book is to give us a call. Our front desk will find a date and time that works for you and answer any questions while you're on the phone.</p>
-
-          <div class="info-items">
-            <div class="info-item d-flex align-items-center mb-3">
-              <div class="icon-wrapper me-3">
-                <i class="bi bi-telephone" aria-hidden="true"></i>
-              </div>
-              <div>
-                <h5>Book Over the Phone</h5>
-                <p class="mb-0">We'll schedule your visit right then, with no waiting for a callback</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex align-items-center mb-3">
-              <div class="icon-wrapper me-3">
-                <i class="bi bi-chat-dots" aria-hidden="true"></i>
-              </div>
-              <div>
-                <h5>Ask Us Anything</h5>
-                <p class="mb-0">Questions about a service, insurance, or your first visit? We're happy to help</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex align-items-center mb-3">
-              <div class="icon-wrapper me-3">
-                <i class="bi bi-people" aria-hidden="true"></i>
-              </div>
-              <div>
-                <h5>New Patients Welcome</h5>
-                <p class="mb-0">We'll ask you to fill out our new patient form. See <a href="/website-staging/resources/new-patients">what to expect at your first visit</a></p>
-              </div>
-            </div><!-- End Info Item -->
-          </div>
-
-        </div>
-      </div><!-- End Appointment Info -->
-
       <!-- Call Card -->
-      <div class="col-lg-7 order-first order-lg-last">
+      <div class="col-lg-7 order-lg-last">
         <div class="appointment-form-wrapper call-card text-center">
           <div class="call-icon mx-auto mb-3">
             <i class="bi bi-telephone-fill" aria-hidden="true"></i>
@@ -310,12 +271,53 @@
 
           <div class="emergency-contact mt-4 text-start">
             <div class="emergency-card p-3">
-              <h6 class="mb-2"><i class="bi bi-exclamation-circle-fill me-2" aria-hidden="true"></i>Dental Emergency?</h6>
+              <h2 class="mb-2"><i class="bi bi-exclamation-circle-fill me-2" aria-hidden="true"></i>Dental Emergency?</h2>
               <p class="mb-0">Call <a href="tel:+13128421018"><strong>(312) 842-1018</strong></a> right away and let us know it's urgent so we can see you as quickly as possible.</p>
             </div>
           </div>
         </div>
       </div><!-- End Call Card -->
+
+      <!-- Appointment Info -->
+      <div class="col-lg-5">
+        <div class="appointment-info">
+          <h2>Schedule Your Visit</h2>
+          <p class="mb-4">The quickest way to book is to give us a call. Our front desk will find a date and time that works for you and answer any questions while you're on the phone.</p>
+
+          <div class="info-items">
+            <div class="info-item d-flex align-items-center mb-3">
+              <div class="icon-wrapper me-3">
+                <i class="bi bi-telephone" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3>Book Over the Phone</h3>
+                <p class="mb-0">We'll schedule your visit right then, with no waiting for a callback</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex align-items-center mb-3">
+              <div class="icon-wrapper me-3">
+                <i class="bi bi-chat-dots" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3>Ask Us Anything</h3>
+                <p class="mb-0">Questions about a service, insurance, or your first visit? We're happy to help</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex align-items-center mb-3">
+              <div class="icon-wrapper me-3">
+                <i class="bi bi-people" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3>New Patients Welcome</h3>
+                <p class="mb-0">We'll ask you to fill out our new patient form. See <a href="/website-staging/resources/new-patients">what to expect at your first visit</a></p>
+              </div>
+            </div><!-- End Info Item -->
+          </div>
+
+        </div>
+      </div><!-- End Appointment Info -->
 
     </div>
 
@@ -328,7 +330,7 @@
             <div class="step-icon">
               <i class="bi bi-telephone-outbound" aria-hidden="true"></i>
             </div>
-            <h5>Give Us a Call</h5>
+            <h3>Give Us a Call</h3>
             <p>Call (312) 842-1018 and let us know what you're coming in for</p>
           </div>
         </div><!-- End Step -->
@@ -339,7 +341,7 @@
             <div class="step-icon">
               <i class="bi bi-calendar-check" aria-hidden="true"></i>
             </div>
-            <h5>Pick a Time</h5>
+            <h3>Pick a Time</h3>
             <p>Our front desk finds a date and time that fits your schedule</p>
           </div>
         </div><!-- End Step -->
@@ -350,7 +352,7 @@
             <div class="step-icon">
               <i class="bi bi-clipboard-check" aria-hidden="true"></i>
             </div>
-            <h5>Get Ready</h5>
+            <h3>Get Ready</h3>
             <p>Email your dental X-rays and completed forms to our office before your visit</p>
           </div>
         </div><!-- End Step -->
@@ -361,7 +363,7 @@
             <div class="step-icon">
               <i class="bi bi-emoji-smile" aria-hidden="true"></i>
             </div>
-            <h5>Visit Us</h5>
+            <h3>Visit Us</h3>
             <p>New patients begin with a comprehensive exam, including gum measurements</p>
           </div>
         </div><!-- End Step -->
@@ -395,7 +397,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Quick Links</h4>
+          <h2>Quick Links</h2>
           <ul>
             <li><a href="/website-staging/">Home</a></li>
             <li><a href="/website-staging/about">About</a></li>
@@ -407,7 +409,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>About</h4>
+          <h2>About</h2>
           <ul>
             <li><a href="/website-staging/about">Our Story</a></li>
             <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
@@ -415,7 +417,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Services</h4>
+          <h2>Services</h2>
           <ul>
             <li><a href="/website-staging/services/general-dentistry">General Dentistry</a></li>
             <li><a href="/website-staging/services/restorative-dentistry">Restorative Dentistry</a></li>
@@ -425,7 +427,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Resources</h4>
+          <h2>Resources</h2>
           <ul>
             <li><a href="/website-staging/resources/faq">FAQ</a></li>
             <li><a href="/website-staging/resources/new-patients">New Patients</a></li>

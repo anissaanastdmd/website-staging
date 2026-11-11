@@ -191,6 +191,8 @@
 
 <body class="accessibility-page">
 
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
@@ -198,16 +200,16 @@
         <img src="/website-staging/assets/img/logo.png" alt="Anissa Anast Dental Office">
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
+      <nav id="navmenu" class="navmenu" aria-label="Main">
+        <ul id="navmenu-list">
           <li><a href="/website-staging/">Home</a></li>
-          <li class="dropdown"><a href="/website-staging/about"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/about"><span>About</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="About submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/about">Our Story</a></li>
     <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/services"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/services"><span>Services</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Services submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/services/general-dentistry">General Dentistry</a></li>
     <li><a href="/website-staging/services/restorative-dentistry">Restorative Dentistry</a></li>
@@ -215,7 +217,7 @@
     <li><a href="/website-staging/services/injectables-and-threads">Injectables &amp; Threads</a></li>
   </ul>
 </li>
-          <li class="dropdown"><a href="/website-staging/resources"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="/website-staging/resources"><span>Resources</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a><button type="button" class="toggle-dropdown" aria-expanded="false" aria-label="Resources submenu"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
   <ul>
     <li><a href="/website-staging/resources/faq">FAQ</a></li>
     <li><a href="/website-staging/resources/new-patients">New Patients</a></li>
@@ -224,7 +226,7 @@
 </li>
           <li><a href="/website-staging/contact">Contact</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-lg-none bi bi-list"></i>
+        <button type="button" class="mobile-nav-toggle d-lg-none" aria-label="Open menu" aria-expanded="false" aria-controls="navmenu-list"><i class="bi bi-list" aria-hidden="true"></i></button>
       </nav>
 
       <a class="btn-getstarted" href="/website-staging/request-appointment">Request Appointment</a>
@@ -233,11 +235,11 @@
   </header>
 
 
-  <main class="main">
+  <main id="main" class="main" tabindex="-1">
 
     <!-- Page Title -->
     <div class="page-title">
-      <nav class="breadcrumbs">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
         <div class="container">
           <ol>
             <li><a href="/website-staging/">Home</a></li>
@@ -253,7 +255,7 @@
   <div class="container">
     <!-- Page Header -->
     <div class="tos-header text-center">
-      <span class="last-updated">Last Updated: November 6, 2026</span>
+      <span class="last-updated">Last Updated: November 11, 2026</span>
       <h1 class="h2">Our Commitment to Accessibility</h1>
       <p>Anissa Anast Dental Office is committed to providing a website that is accessible to the widest possible audience, including people with disabilities.</p>
     </div>
@@ -262,7 +264,7 @@
     <div class="tos-content">
 
       <div id="commitment" class="content-section">
-        <h3>1. Our Goal</h3>
+        <h2>1. Our Goal</h2>
         <p>We are working to make our website conform to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA. These guidelines explain how to make web content more accessible for people with a wide range of disabilities, including visual, auditory, physical, speech, cognitive, and neurological disabilities.</p>
         <div class="info-box">
           <i class="bi bi-info-circle" aria-hidden="true"></i>
@@ -271,42 +273,44 @@
       </div>
 
       <div id="measures" class="content-section">
-        <h3>2. Measures We Take</h3>
+        <h2>2. Measures We Take</h2>
         <p>To support accessibility, we aim to:</p>
         <ul class="list-items">
           <li>Use clear headings and a consistent page structure</li>
           <li>Provide text alternatives for meaningful images</li>
           <li>Label form fields so they work with assistive technology</li>
-          <li>Maintain sufficient color contrast for text and buttons</li>
-          <li>Support keyboard navigation throughout the website</li>
+          <li>Maintain sufficient color contrast for text and buttons, and underline links within text</li>
+          <li>Support keyboard navigation throughout the website, including menus and our FAQ, with a visible focus indicator and a "Skip to main content" link</li>
+          <li>Let you pause content that moves on its own, and limit motion when your device is set to reduce motion</li>
           <li>Design pages that adapt to different screen sizes and zoom levels</li>
+          <li>Test our pages with automated accessibility tools and manual keyboard checks when we make changes</li>
         </ul>
       </div>
 
       <div id="third-party" class="content-section">
-        <h3>3. Third-Party Content</h3>
-        <p>Some content on our website is provided by third parties, such as the embedded Google Map and our online form service. While we choose providers with accessibility in mind, we don't control their content and can't guarantee it fully meets accessibility standards.</p>
+        <h2>3. Third-Party Content</h2>
+        <p>Some content on our website is provided by third parties, such as the embedded Google Map, our online form service, our dental membership plan sign-up (provided by Curve Memberships), and our social media profiles. While we choose providers with accessibility in mind, we don't control their content and can't guarantee it fully meets accessibility standards.</p>
       </div>
 
       <div id="limitations" class="content-section">
-        <h3>4. Known Limitations</h3>
+        <h2>4. Known Limitations</h2>
         <p>Despite our efforts, some parts of the website may not yet be fully accessible. If you have trouble accessing any content or feature, please let us know so we can fix it and provide the information you need in another way.</p>
         <div class="alert-box">
           <i class="bi bi-telephone" aria-hidden="true"></i>
           <div class="alert-content">
-            <h5>Need Help Right Away?</h5>
+            <h3>Need Help Right Away?</h3>
             <p>Our team is happy to help by phone. Call <a href="tel:+13128421018">(312) 842-1018</a> to schedule an appointment, ask a question, or get any information on this website.</p>
           </div>
         </div>
       </div>
 
       <div id="office" class="content-section">
-        <h3>5. Accessibility at Our Office</h3>
+        <h2>5. Accessibility at Our Office</h2>
         <p>If you have a disability or need an accommodation during your visit, please let us know when you schedule your appointment, and we'll do our best to make your visit comfortable.</p>
       </div>
 
       <div id="feedback" class="content-section">
-        <h3>6. Feedback</h3>
+        <h2>6. Feedback</h2>
         <p>We welcome your feedback on the accessibility of our website. When contacting us, please describe the page and the problem you encountered, and we'll respond as soon as we can.</p>
         <ul class="list-items">
           <li>Phone: <a href="tel:+13128421018">(312) 842-1018</a></li>
@@ -323,7 +327,7 @@
           <i class="bi bi-envelope" aria-hidden="true"></i>
         </div>
         <div class="contact-content">
-          <h4>Questions About Accessibility?</h4>
+          <h2>Questions About Accessibility?</h2>
           <p>If you have questions or need assistance, please reach out to our office.</p>
           <a href="/website-staging/contact" class="contact-link">Contact Us</a>
         </div>
@@ -355,7 +359,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Quick Links</h4>
+          <h2>Quick Links</h2>
           <ul>
             <li><a href="/website-staging/">Home</a></li>
             <li><a href="/website-staging/about">About</a></li>
@@ -367,7 +371,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>About</h4>
+          <h2>About</h2>
           <ul>
             <li><a href="/website-staging/about">Our Story</a></li>
             <li><a href="/website-staging/about/our-staff">Our Staff</a></li>
@@ -375,7 +379,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Services</h4>
+          <h2>Services</h2>
           <ul>
             <li><a href="/website-staging/services/general-dentistry">General Dentistry</a></li>
             <li><a href="/website-staging/services/restorative-dentistry">Restorative Dentistry</a></li>
@@ -385,7 +389,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2 footer-links">
-          <h4>Resources</h4>
+          <h2>Resources</h2>
           <ul>
             <li><a href="/website-staging/resources/faq">FAQ</a></li>
             <li><a href="/website-staging/resources/new-patients">New Patients</a></li>
